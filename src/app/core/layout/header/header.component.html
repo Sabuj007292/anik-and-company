@@ -1,0 +1,152 @@
+<!-- TOP CONTACT BAR -->
+<div class="hidden md:block bg-primary text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-10">
+        <div class="flex space-x-6 text-yellow-400">
+            <span>📞 +91 9830316065</span>
+            <span>✉ anik2011@yahoo.in</span>
+        </div>
+        <div>
+            <span>Civil • Electrical • Consultancy</span>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header class="sticky top-0 z-50 bg-[#e2e7eb]/95 backdrop-blur-md shadow-sm border-b border-gray-300">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- LOGO -->
+            <div class="flex items-center space-x-3 cursor-pointer">
+                <div
+                    class="bg-primary text-white font-bold w-11 h-11 flex items-center justify-center rounded-md shadow-md">
+                    AN
+                </div>
+
+                <div>
+                    <h1 class="text-primary font-bold text-xl tracking-wide">
+                        A-NIK & Co.
+                    </h1>
+                    <p class="text-xs text-gray-600 tracking-wider uppercase">
+                        Civil & Electrical Consultant
+                    </p>
+                </div>
+            </div>
+
+            <!-- DESKTOP NAV -->
+            <nav class="hidden md:flex items-center space-x-10 font-medium">
+
+                <!-- HOME -->
+                <a routerLink="/" fragment="home" [ngClass]="{
+       'text-primary font-semibold': activeSection === 'home',
+       'text-gray-700': activeSection !== 'home'
+     }" class="relative transition duration-300 hover:text-primary">
+                    Home
+                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
+                        [class.w-full]="activeSection === 'home'" [class.w-0]="activeSection !== 'home'">
+                    </span>
+                </a>
+
+                <!-- ABOUT -->
+                <a routerLink="/" fragment="about" [ngClass]="{
+       'text-primary font-semibold': activeSection === 'about',
+       'text-gray-700': activeSection !== 'about'
+     }" class="relative transition duration-300 hover:text-primary">
+                    About
+                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
+                        [class.w-full]="activeSection === 'about'" [class.w-0]="activeSection !== 'about'">
+                    </span>
+                </a>
+
+                <!-- SERVICES -->
+                <a routerLink="/" fragment="services" [ngClass]="{
+       'text-primary font-semibold': activeSection === 'services',
+       'text-gray-700': activeSection !== 'services'
+     }" class="relative transition duration-300 hover:text-primary">
+                    Services
+                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
+                        [class.w-full]="activeSection === 'services'" [class.w-0]="activeSection !== 'services'">
+                    </span>
+                </a>
+
+                <!-- PROJECTS -->
+                <a routerLink="/" fragment="projects" [ngClass]="{
+       'text-primary font-semibold': activeSection === 'projects',
+       'text-gray-700': activeSection !== 'projects'
+     }" class="relative transition duration-300 hover:text-primary">
+                    Projects
+                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
+                        [class.w-full]="activeSection === 'projects'" [class.w-0]="activeSection !== 'projects'">
+                    </span>
+                </a>
+
+                <!-- CONTACT -->
+                <a routerLink="/" fragment="contact" [ngClass]="{
+       'text-primary font-semibold': activeSection === 'contact',
+       'text-gray-700': activeSection !== 'contact'
+     }" class="relative transition duration-300 hover:text-primary">
+                    Contact
+                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
+                        [class.w-full]="activeSection === 'contact'" [class.w-0]="activeSection !== 'contact'">
+                    </span>
+                </a>
+
+            </nav>
+
+
+            <!-- CTA BUTTON -->
+            <div class="hidden md:block">
+                <a routerLink="/" fragment="contact"
+                    class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold shadow hover:shadow-lg hover:bg-accent transition duration-300">
+                    Request Consultation
+                </a>
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <button (click)="toggleMenu()" class="md:hidden text-3xl text-primary">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div *ngIf="isOpen()"
+            class="md:hidden bg-white shadow-xl rounded-lg mt-3 py-6 px-6 space-y-6 animate-slideDown">
+
+            <a routerLink="/" fragment="home" (click)="toggleMenu()"
+                class="block text-gray-700 hover:text-primary font-medium">
+                Home
+            </a>
+
+            <a routerLink="/" fragment="about" (click)="toggleMenu()"
+                class="block text-gray-700 hover:text-primary font-medium">
+                About
+            </a>
+
+            <a routerLink="/" fragment="services" (click)="toggleMenu()"
+                class="block text-gray-700 hover:text-primary font-medium">
+                Services
+            </a>
+
+            <a routerLink="/" fragment="projects" (click)="toggleMenu()"
+                class="block text-gray-700 hover:text-primary font-medium">
+                Projects
+            </a>
+
+            <a routerLink="/" fragment="contact" (click)="toggleMenu()"
+                class="block text-gray-700 hover:text-primary font-medium">
+                Contact
+            </a>
+
+            <a routerLink="/" fragment="contact" (click)="toggleMenu()"
+                class="block bg-primary text-white px-4 py-3 rounded-md text-center font-semibold hover:bg-accent transition">
+                Request Consultation
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
