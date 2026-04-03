@@ -50,54 +50,105 @@
       </div>
 
       <!-- Contact Form -->
-      <div class="bg-white p-8 rounded-xl shadow-lg">
+     <div class="bg-white p-8 rounded-xl shadow-lg">
 
-        <form class="space-y-6">
+  <form [formGroup]="contactForm"
+        (ngSubmit)="submitForm()"
+        class="space-y-6">
 
-          <div>
-            <label class="block mb-2 font-medium text-gray-700">
-              Full Name
-            </label>
-            <input type="text"
-                   class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                   placeholder="Enter your name">
-          </div>
+    <!-- Name -->
+    <div>
+      <label class="block mb-2 font-medium text-gray-700">
+        Full Name
+      </label>
+      <input type="text"
+             formControlName="name"
+             class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-600"
+             placeholder="Enter your name">
 
-          <div>
-            <label class="block mb-2 font-medium text-gray-700">
-              Email Address
-            </label>
-            <input type="email"
-                   class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                   placeholder="Enter your email">
-          </div>
+      <p *ngIf="submitted && contactForm.get('name')?.errors"
+         class="text-red-500 text-sm mt-1">
+         Name is required
+      </p>
+    </div>
 
-          <div>
-            <label class="block mb-2 font-medium text-gray-700">
-              Phone Number
-            </label>
-            <input type="tel"
-                   class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                   placeholder="Enter your phone number">
-          </div>
+    <!-- Email -->
+    <div>
+      <label class="block mb-2 font-medium text-gray-700">
+        Email Address
+      </label>
+      <input type="email"
+             formControlName="email"
+             class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-600"
+             placeholder="Enter your email">
 
-          <div>
-            <label class="block mb-2 font-medium text-gray-700">
-              Project Details
-            </label>
-            <textarea rows="4"
-                      class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      placeholder="Tell us about your project"></textarea>
-          </div>
+      <p *ngIf="submitted && contactForm.get('email')?.errors"
+         class="text-red-500 text-sm mt-1">
+         Valid email is required
+      </p>
+    </div>
 
-          <button type="submit"
-                  class="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition">
-            Send Message
-          </button>
+    <!-- Phone -->
+    <div>
+      <label class="block mb-2 font-medium text-gray-700">
+        Phone Number
+      </label>
+      <input type="text"
+             formControlName="phone"
+             class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-600"
+             placeholder="Enter your phone number">
 
-        </form>
+      <p *ngIf="submitted && contactForm.get('phone')?.errors"
+         class="text-red-500 text-sm mt-1">
+         Phone is required
+      </p>
+    </div>
 
-      </div>
+    <!-- Project Type -->
+    <div>
+      <label class="block mb-2 font-medium text-gray-700">
+        Project Type
+      </label>
+      <select formControlName="projectType"
+              class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-600">
+        <option value="">Select Project Type</option>
+        <option>Electrical</option>
+        <option>Civil</option>
+        <option>Industrial</option>
+      </select>
+
+      <p *ngIf="submitted && contactForm.get('projectType')?.errors"
+         class="text-red-500 text-sm mt-1">
+         Project type is required
+      </p>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label class="block mb-2 font-medium text-gray-700">
+        Project Details
+      </label>
+      <textarea rows="4"
+                formControlName="message"
+                class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-600"
+                placeholder="Tell us about your project"></textarea>
+
+      <p *ngIf="submitted && contactForm.get('message')?.errors"
+         class="text-red-500 text-sm mt-1">
+         Message is required
+      </p>
+    </div>
+
+    <button type="submit"
+            class="w-full bg-primary hover:bg-[#00a8c6] text-white py-3 rounded-lg font-semibold transition cursor-pointer">
+      Send Message
+    </button>
+
+  </form>
+
+</div>
+
+
 
     </div>
 
