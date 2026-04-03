@@ -97,11 +97,27 @@
 
 
             <!-- CTA BUTTON -->
-            <div class="hidden md:block">
+            <!-- <div class="hidden md:block">
                 <a routerLink="/" fragment="contact"
                     class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold shadow hover:shadow-lg hover:bg-accent transition duration-300">
                     Request Consultation
                 </a>
+            </div> -->
+            <!-- CTA + LOGIN BUTTON -->
+            <div class="hidden md:flex items-center space-x-4">
+
+                <!-- LOGIN BUTTON -->
+                <a routerLink="/login"
+                    class="border border-primary text-primary px-5 py-2.5 rounded-md font-semibold hover:bg-primary hover:text-white transition duration-300">
+                    Login
+                </a>
+
+                <!-- EXISTING CTA -->
+                <a routerLink="/" fragment="contact"
+                    class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold shadow hover:shadow-lg hover:bg-accent transition duration-300">
+                    Request Consultation
+                </a>
+
             </div>
 
             <!-- MOBILE BUTTON -->
@@ -143,6 +159,10 @@
             <a routerLink="/" fragment="contact" (click)="toggleMenu()"
                 class="block bg-primary text-white px-4 py-3 rounded-md text-center font-semibold hover:bg-accent transition">
                 Request Consultation
+            </a>
+            <a routerLink="/login" (click)="toggleMenu()"
+                class="block text-center border border-primary text-primary px-4 py-3 rounded-md font-semibold hover:bg-primary hover:text-white transition">
+                Login
             </a>
 
         </div>
