@@ -1,0 +1,92 @@
+<section class="relative h-[420px] overflow-hidden">
+
+  <!-- Background Image -->
+  <img
+    src="https://img.magnific.com/free-photo/solar-panels-green-energy-concept_35913-2436.jpg?semt=ais_hybrid&w=740&q=80"
+    alt="Solar Banner"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-[#031f44]/80"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6">
+
+    <div>
+
+      <p class="text-yellow-400 text-xl md:text-2xl font-semibold mb-5">
+        Complete Solar Energy Solutions Under One Roof
+      </p>
+
+      <h1
+        class="text-white text-6xl sm:text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wide">
+        Services
+      </h1>
+
+      <div class="mt-8 text-gray-300 text-lg">
+        <a routerLink="/" class="hover:text-yellow-400 transition">
+          Home
+        </a>
+
+        <span class="mx-2">»</span>
+
+        <span>Our Services</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="bg-gray-100 py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-4xl font-bold text-blue-800">
+                Solar Energy Services
+            </h2>
+
+            <p class="text-blue-600 font-semibold mt-3">
+                Reliable, Renewable, Cost-Effective Power Solutions
+            </p>
+
+            <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                We provide complete solar energy solutions for residential,
+                commercial, and industrial projects with professional installation
+                and maintenance.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+  <div
+    *ngFor="let service of solarServices"
+    [routerLink]="['/solar', service.slug]"
+    class="group bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 cursor-pointer">
+
+    <img
+      [src]="service.image"
+      [alt]="service.title"
+      class="w-full h-72 object-cover group-hover:scale-110 transition duration-700">
+
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-blue-800 text-center">
+        {{ service.title }}
+      </h3>
+
+      <p class="text-gray-600 text-center mt-3">
+        {{ service.description }}
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+    </div>
+
+</section>

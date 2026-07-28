@@ -2,17 +2,21 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ContactService } from '../../services-api/contact.service';
+import { LucideAngularModule, Mail, MapPin, Phone } from 'lucide-angular';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],  // ✅ IMPORTANT
+  imports: [CommonModule, ReactiveFormsModule, LucideAngularModule, ],  // ✅ IMPORTANT
   templateUrl: './contact.component.html'
 })
 export class ContactComponent {
 
   contactForm!: FormGroup;
   submitted = false;
+  readonly Phone = Phone;
+  readonly Mail = Mail;
+  readonly MapPin = MapPin;
 
   constructor(
     private fb: FormBuilder,

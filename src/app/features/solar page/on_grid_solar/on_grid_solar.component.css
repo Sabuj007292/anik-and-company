@@ -1,0 +1,11 @@
+button{
+    transition: all .35s ease;
+}
+
+button:hover{
+    transform: translateX(6px);
+}
+
+button:focus{
+    outline:none;
+}

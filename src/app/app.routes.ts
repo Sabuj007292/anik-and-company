@@ -41,6 +41,18 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/login/login.component')
             .then(m => m.LoginComponent)
+      },
+      {
+        path: 'solar',
+        loadComponent: () =>
+          import('./features/solar page/solar/solar.component')
+            .then(m => m.SolarComponent)
+      },
+      {
+        path: 'solar/on_grid_solar',
+        loadComponent: () =>
+          import('./features/solar page/on_grid_solar/on_grid_solar.component')
+            .then(m => m.On_grid_solarComponent)
       }
     ]
   }
