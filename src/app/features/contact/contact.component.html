@@ -188,7 +188,7 @@
                 <span class="absolute inset-0 rounded-2xl bg-white/20 animate-ping">
                 </span>
                 <div class="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white/85 shadow-lg">
-                  <lucide-angular [img]="Phone" class="h-6 w-6 text-[#0F4C81]">
+                  <lucide-angular [img]="icons.phone" class="h-6 w-6 text-[#0F4C81]">
                   </lucide-angular>
                 </div>
               </div>
@@ -216,7 +216,7 @@
              group-hover:rotate-6
              group-hover:bg-white">
 
-                  <lucide-angular [img]="Mail"
+                  <lucide-angular [img]="icons.mail"
                     class="h-5 w-5 text-[#0F4C81] transition-all duration-300 group-hover:text-[#14B8A6]">
                   </lucide-angular>
                 </div>
@@ -249,7 +249,7 @@
              group-hover:rotate-6
              group-hover:bg-white">
 
-                  <lucide-angular [img]="MapPin"
+                  <lucide-angular [img]="icons.mapPin"
                     class="h-5 w-5 text-[#0F4C81] transition-all duration-300 group-hover:text-[#14B8A6]">
                   </lucide-angular>
 
@@ -511,7 +511,10 @@
         <div class="space-y-4 text-gray-600">
 
           <div class="d-flex align-items-start gap-2">
-            <lucide-angular [img]="MapPin"></lucide-angular>
+           <lucide-icon
+  [img]="icons.mapPin"
+  [size]="22">
+</lucide-icon>
 
             <div>
               AB-394, Samarpally, Krishnapur,<br>

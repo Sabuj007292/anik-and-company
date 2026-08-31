@@ -1,14 +1,287 @@
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
+/* =========================================
+   SOLAR STATUS ANIMATION
+========================================= */
+
+.solar-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 100%;
+}
+
+.solar-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* SUN */
+
+.sun {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #facc15;
+
+  box-shadow:
+    0 0 6px rgba(250, 204, 21, 0.8),
+    0 0 12px rgba(250, 204, 21, 0.35);
+
+  animation: sunPulse 2.5s ease-in-out infinite;
+}
+
+
+/* Sun Rays */
+
+.sun::before,
+.sun::after {
+  content: "";
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 50%;
+
+  border: 1px dotted rgba(250, 204, 21, 0.8);
+
+  animation: sunRotate 8s linear infinite;
+}
+
+.sun::after {
+  transform: rotate(45deg);
+}
+
+
+/* SOLAR PANEL */
+
+.solar-panel {
+  position: absolute;
+
+  bottom: 3px;
+  left: 1px;
+
+  width: 25px;
+  height: 14px;
+
+  transform: skewX(-12deg) rotate(-8deg);
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #2563eb,
+    #172554
+  );
+
+  border: 1px solid #60a5fa;
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 0 5px rgba(59, 130, 246, 0.7),
+    inset 0 0 5px rgba(255,255,255,0.2);
+
+  animation: panelGlow 3s ease-in-out infinite;
+}
+
+
+/* PANEL GRID */
+
+.solar-panel div {
+  position: absolute;
+  background: rgba(255,255,255,0.45);
+}
+
+
+/* Vertical lines */
+
+.solar-panel div:nth-child(1) {
+  width: 1px;
+  height: 100%;
+  left: 33%;
+}
+
+.solar-panel div:nth-child(2) {
+  width: 1px;
+  height: 100%;
+  left: 66%;
+}
+
+
+/* Horizontal lines */
+
+.solar-panel div:nth-child(3) {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.solar-panel div:nth-child(4) {
+  display: none;
+}
+
+
+/* TEXT */
+
+.solar-text {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #cbd5e1;
+
+  letter-spacing: 0.2px;
+
+  transition: color 0.3s ease;
+}
+
+.solar-status:hover .solar-text {
+  color: #facc15;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes sunPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
   }
 
-  100% {
-    transform: translateX(-100%);
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 
-.animate-marquee {
-  display: inline-block;
-  animation: marquee 25s linear infinite;
+
+@keyframes sunRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes panelGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px rgba(59, 130, 246, 0.5),
+      inset 0 0 5px rgba(255,255,255,0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 12px rgba(59, 130, 246, 0.9),
+      0 0 18px rgba(14, 165, 233, 0.25),
+      inset 0 0 7px rgba(255,255,255,0.25);
+  }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sun,
+  .sun::before,
+  .sun::after,
+  .solar-panel {
+    animation: none;
+  }
+
+}
+
+/* =========================================
+   SOCIAL MEDIA ICONS
+========================================= */
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #cbd5e1;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 12px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.social-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: #ffffff;
+}
+
+
+/* Facebook */
+
+.social-icon.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+
+  box-shadow:
+    0 5px 15px rgba(24, 119, 242, 0.35);
+}
+
+
+/* LinkedIn */
+
+.social-icon.linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+
+  box-shadow:
+    0 5px 15px rgba(10, 102, 194, 0.35);
+}
+
+
+/* Instagram */
+
+.social-icon.instagram:hover {
+  background: linear-gradient(
+    135deg,
+    #f58529,
+    #dd2a7b,
+    #8134af
+  );
+
+  border-color: #dd2a7b;
+
+  box-shadow:
+    0 5px 15px rgba(221, 42, 123, 0.35);
 }
