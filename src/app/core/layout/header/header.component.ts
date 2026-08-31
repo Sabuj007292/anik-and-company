@@ -29,6 +29,15 @@ export class HeaderComponent {
   // Mobile Menu Toggle
   isOpen = signal(false);
   readonly icons = ICONS;
+   readonly whatsappNumber = '919748090555';
+
+  readonly whatsappMessage =
+    'Hello A-NIK & CO., I am interested in your solar installation services. Please share more details.';
+
+  readonly whatsappLink =
+    `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
+      this.whatsappMessage
+    )}`;
   
 
   toggleMenu() {
@@ -42,10 +51,10 @@ export class HeaderComponent {
 
   readonly contactItems: ContactItem[] = [
     {
-      icon: 'phone',
-      label: 'Call Us',
-      value: '+91 9830316065',
-      href: 'tel:+919830316065'
+      icon: 'whatsapp',
+      label: 'WhatsApp',
+      value: '+91 9748090555',
+      href: this.whatsappLink
     },
     {
       icon: 'mail',
