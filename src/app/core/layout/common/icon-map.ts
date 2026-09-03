@@ -8,7 +8,15 @@ import {
   Facebook,
   Linkedin,
   Instagram,
-  ArrowRight
+  ArrowRight,
+  Sun,
+  Zap,
+  ClipboardList,
+  ShieldCheck,
+  Clipboard,
+  User,
+  Factory,
+  
 } from 'lucide-angular';
 
 export const ICONS = {
@@ -21,7 +29,17 @@ export const ICONS = {
   facebook: Facebook,
   linkedin: Linkedin,
   instagram: Instagram,
-  arrowRight: ArrowRight
+  arrowRight: ArrowRight,
+  sun: Sun,
+  zap: Zap,
+  ClipboardList: ClipboardList,
+  ShieldCheck: ShieldCheck,
+  clipboard: Clipboard,
+  user: User,
+  messageCircle: MessageCircle,
+  factory: Factory,
+  shieldCheck: ShieldCheck,
+
 } as const;
 
 export type IconName = keyof typeof ICONS;

@@ -102,162 +102,293 @@
 </div>
 
 <!-- MAIN HEADER -->
-<header class="sticky top-0 z-50 bg-[#e2e7eb]/95 backdrop-blur-md shadow-sm border-b border-gray-300">
+<header class="sticky top-0 z-50 border-b transition-all duration-500 ease-out" [ngClass]="
+    scrolled()
+      ? 'bg-white/98 border-slate-200 shadow-lg shadow-slate-900/5 backdrop-blur-xl'
+      : 'bg-[#e2e7eb]/95 border-gray-300 shadow-sm backdrop-blur-md'
+  ">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="mx-auto px-4 transition-all duration-500 sm:px-6" [ngClass]="
+      scrolled()
+        ? 'max-w-7xl'
+        : 'max-w-7xl'
+    ">
 
-        <div class="flex items-center justify-between h-20">
+        <!-- ================================================= -->
+        <!-- MAIN HEADER -->
+        <!-- ================================================= -->
 
+        <div class="flex items-center justify-between transition-all duration-500" [ngClass]="
+        scrolled()
+          ? 'h-16'
+          : 'h-20'
+      ">
+
+            <!-- ================================================= -->
             <!-- LOGO -->
-            <!-- <div class="flex items-center space-x-3 cursor-pointer">
-                <div
-                    class="bg-primary text-white font-bold w-11 h-11 flex items-center justify-center rounded-md shadow-md">
-                    AN
-                </div>
+            <!-- ================================================= -->
 
-                <div>
-                    <h1 class="text-primary font-bold text-xl tracking-wide">
-                        A-NIK & Co.
-                    </h1>
-                    <p class="text-xs text-gray-600 tracking-wider uppercase">
-                        Civil & Electrical Consultant
-                    </p>
-                </div>
-            </div> -->
-            <!-- Logo -->
-            <div class="flex items-center cursor-pointer">
-                <img src="/images/logo/company_logo.png" alt="Company Logo" class="h-25 w-25 object-contain">
-            </div>
+            <a routerLink="/" fragment="home" class="group flex items-center">
 
-            <!-- DESKTOP NAV -->
-            <nav class="hidden md:flex items-center space-x-10 font-medium">
+                <img src="/images/logo/company_logo.png" alt="A-NIK & Co."
+                    class="w-auto object-contain transition-all duration-500 ease-out" [ngClass]="
+            scrolled()
+              ? 'h-14'
+              : 'h-20'
+          " />
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- DESKTOP NAVIGATION -->
+            <!-- ================================================= -->
+
+            <nav class="hidden items-center md:flex" [ngClass]="
+          scrolled()
+            ? 'gap-7'
+            : 'gap-9'
+        ">
 
                 <!-- HOME -->
-                <a routerLink="/" fragment="home" [ngClass]="{
-       'text-primary font-semibold': activeSection === 'home',
-       'text-gray-700': activeSection !== 'home'
-     }" class="relative transition duration-300 hover:text-primary">
+
+                <a routerLink="/" fragment="home" (click)="navigateToSection('home')" [ngClass]="{
+            'text-primary font-bold':
+              activeSection === 'home',
+
+            'text-slate-600':
+              activeSection !== 'home'
+          }" class="group relative py-2 text-sm transition-all duration-300 hover:text-primary">
+
                     Home
-                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
-                        [class.w-full]="activeSection === 'home'" [class.w-0]="activeSection !== 'home'">
-                    </span>
+
+                    <span class="absolute bottom-0 left-0 h-0.5 rounded-full bg-primary transition-all duration-300"
+                        [ngClass]="
+              activeSection === 'home'
+                ? 'w-full'
+                : 'w-0'
+            "></span>
+
                 </a>
+
 
                 <!-- ABOUT -->
-                <a routerLink="/" fragment="about" [ngClass]="{
-       'text-primary font-semibold': activeSection === 'about',
-       'text-gray-700': activeSection !== 'about'
-     }" class="relative transition duration-300 hover:text-primary">
+
+                <a routerLink="/" fragment="about" (click)="navigateToSection('about')" [ngClass]="{
+            'text-primary font-bold':
+              activeSection === 'about',
+
+            'text-slate-600':
+              activeSection !== 'about'
+          }" class="group relative py-2 text-sm transition-all duration-300 hover:text-primary">
+
                     About
-                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
-                        [class.w-full]="activeSection === 'about'" [class.w-0]="activeSection !== 'about'">
-                    </span>
+
+                    <span class="absolute bottom-0 left-0 h-0.5 rounded-full bg-primary transition-all duration-300"
+                        [ngClass]="
+              activeSection === 'about'
+                ? 'w-full'
+                : 'w-0'
+            "></span>
+
                 </a>
+
 
                 <!-- SERVICES -->
-                <a routerLink="/" fragment="services" [ngClass]="{
-       'text-primary font-semibold': activeSection === 'services',
-       'text-gray-700': activeSection !== 'services'
-     }" class="relative transition duration-300 hover:text-primary">
+
+                <a routerLink="/" fragment="services" (click)="navigateToSection('services')" [ngClass]="{
+            'text-primary font-bold':
+              activeSection === 'services',
+
+            'text-slate-600':
+              activeSection !== 'services'
+          }" class="group relative py-2 text-sm transition-all duration-300 hover:text-primary">
+
                     Services
-                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
-                        [class.w-full]="activeSection === 'services'" [class.w-0]="activeSection !== 'services'">
-                    </span>
+
+                    <span class="absolute bottom-0 left-0 h-0.5 rounded-full bg-primary transition-all duration-300"
+                        [ngClass]="
+              activeSection === 'services'
+                ? 'w-full'
+                : 'w-0'
+            "></span>
+
                 </a>
+
 
                 <!-- PROJECTS -->
-                <a routerLink="/" fragment="projects" [ngClass]="{
-       'text-primary font-semibold': activeSection === 'projects',
-       'text-gray-700': activeSection !== 'projects'
-     }" class="relative transition duration-300 hover:text-primary">
+
+                <a routerLink="/" fragment="projects" (click)="navigateToSection('projects')" [ngClass]="{
+            'text-primary font-bold':
+              activeSection === 'projects',
+
+            'text-slate-600':
+              activeSection !== 'projects'
+          }" class="group relative py-2 text-sm transition-all duration-300 hover:text-primary">
+
                     Projects
-                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
-                        [class.w-full]="activeSection === 'projects'" [class.w-0]="activeSection !== 'projects'">
-                    </span>
+
+                    <span class="absolute bottom-0 left-0 h-0.5 rounded-full bg-primary transition-all duration-300"
+                        [ngClass]="
+              activeSection === 'projects'
+                ? 'w-full'
+                : 'w-0'
+            "></span>
+
                 </a>
 
+
                 <!-- CONTACT -->
-                <a routerLink="/" fragment="contact" [ngClass]="{
-       'text-primary font-semibold': activeSection === 'contact',
-       'text-gray-700': activeSection !== 'contact'
-     }" class="relative transition duration-300 hover:text-primary">
+
+                <a routerLink="/" fragment="contact" (click)="navigateToSection('contact')" [ngClass]="{
+            'text-primary font-bold':
+              activeSection === 'contact',
+
+            'text-slate-600':
+              activeSection !== 'contact'
+          }" class="group relative py-2 text-sm transition-all duration-300 hover:text-primary">
+
                     Contact
-                    <span class="absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300"
-                        [class.w-full]="activeSection === 'contact'" [class.w-0]="activeSection !== 'contact'">
-                    </span>
+
+                    <span class="absolute bottom-0 left-0 h-0.5 rounded-full bg-primary transition-all duration-300"
+                        [ngClass]="
+              activeSection === 'contact'
+                ? 'w-full'
+                : 'w-0'
+            "></span>
+
                 </a>
 
             </nav>
 
 
-            <!-- CTA BUTTON -->
-            <!-- <div class="hidden md:block">
-                <a routerLink="/" fragment="contact"
-                    class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold shadow hover:shadow-lg hover:bg-accent transition duration-300">
-                    Request Consultation
-                </a>
-            </div> -->
-            <!-- CTA + LOGIN BUTTON -->
-            <div class="hidden md:flex items-center space-x-4">
+            <!-- ================================================= -->
+            <!-- DESKTOP CTA -->
+            <!-- ================================================= -->
 
-                <!-- LOGIN BUTTON -->
-                <a routerLink="/login" *ngIf="false"
-                    class="border border-primary text-primary px-5 py-2.5 rounded-md font-semibold hover:bg-primary hover:text-white transition duration-300">
-                    Login
-                </a>
+            <div class="hidden items-center md:flex">
 
-                <!-- EXISTING CTA -->
-                <a routerLink="/" fragment="contact"
-                    class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold shadow hover:shadow-lg hover:bg-accent transition duration-300">
-                    Request Consultation
+                <a routerLink="/" fragment="contact" (click)="navigateToSection('contact')"
+                    class="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-primary font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:shadow-xl"
+                    [ngClass]="
+            scrolled()
+              ? 'px-5 py-2 text-sm'
+              : 'px-6 py-3 text-sm'
+          ">
+
+                    <span class="relative z-10">
+                        Request Consultation
+                    </span>
+
+                    <span class="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                    </span>
+
                 </a>
 
             </div>
 
+
+            <!-- ================================================= -->
             <!-- MOBILE BUTTON -->
-            <button (click)="toggleMenu()" class="md:hidden text-3xl text-primary">
-                ☰
+            <!-- ================================================= -->
+
+            <button type="button" (click)="toggleMenu()"
+                class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 bg-white/80 text-primary shadow-sm transition-all duration-300 hover:bg-white md:hidden"
+                [attr.aria-expanded]="isOpen()" aria-label="Toggle navigation">
+
+                <span class="relative block h-5 w-5">
+
+                    <!-- TOP -->
+
+                    <span
+                        class="absolute left-0 top-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-300"
+                        [ngClass]="
+              isOpen()
+                ? 'top-2 rotate-45'
+                : ''
+            "></span>
+
+
+                    <!-- MIDDLE -->
+
+                    <span
+                        class="absolute left-0 top-2 block h-0.5 w-5 rounded-full bg-current transition-all duration-300"
+                        [ngClass]="
+              isOpen()
+                ? 'opacity-0'
+                : 'opacity-100'
+            "></span>
+
+
+                    <!-- BOTTOM -->
+
+                    <span
+                        class="absolute left-0 top-4 block h-0.5 w-5 rounded-full bg-current transition-all duration-300"
+                        [ngClass]="
+              isOpen()
+                ? 'top-2 -rotate-45'
+                : ''
+            "></span>
+
+                </span>
+
             </button>
 
         </div>
 
+
+        <!-- ================================================= -->
         <!-- MOBILE MENU -->
-        <div *ngIf="isOpen()"
-            class="md:hidden bg-white shadow-xl rounded-lg mt-3 py-6 px-6 space-y-6 animate-slideDown">
+        <!-- ================================================= -->
 
-            <a routerLink="/" fragment="home" (click)="toggleMenu()"
-                class="block text-gray-700 hover:text-primary font-medium">
-                Home
-            </a>
+        <div *ngIf="isOpen()" class="border-t border-slate-200 py-5 md:hidden">
 
-            <a routerLink="/" fragment="about" (click)="toggleMenu()"
-                class="block text-gray-700 hover:text-primary font-medium">
-                About
-            </a>
+            <nav class="space-y-1">
 
-            <a routerLink="/" fragment="services" (click)="toggleMenu()"
-                class="block text-gray-700 hover:text-primary font-medium">
-                Services
-            </a>
+                <a routerLink="/" fragment="home" (click)="navigateToSection('home')"
+                    class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-primary">
+                    Home
+                    <span>→</span>
+                </a>
 
-            <a routerLink="/" fragment="projects" (click)="toggleMenu()"
-                class="block text-gray-700 hover:text-primary font-medium">
-                Projects
-            </a>
 
-            <a routerLink="/" fragment="contact" (click)="toggleMenu()"
-                class="block text-gray-700 hover:text-primary font-medium">
-                Contact
-            </a>
+                <a routerLink="/" fragment="about" (click)="navigateToSection('about')"
+                    class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-primary">
+                    About
+                    <span>→</span>
+                </a>
 
-            <a routerLink="/" fragment="contact" (click)="toggleMenu()"
-                class="block bg-primary text-white px-4 py-3 rounded-md text-center font-semibold hover:bg-accent transition">
-                Request Consultation
-            </a>
-            <a routerLink="/login" (click)="toggleMenu()"
-                class="block text-center border border-primary text-primary px-4 py-3 rounded-md font-semibold hover:bg-primary hover:text-white transition">
-                Login
-            </a>
+
+                <a routerLink="/" fragment="services" (click)="navigateToSection('services')"
+                    class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-primary">
+                    Services
+                    <span>→</span>
+                </a>
+
+
+                <a routerLink="/" fragment="projects" (click)="navigateToSection('projects')"
+                    class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-primary">
+                    Projects
+                    <span>→</span>
+                </a>
+
+
+                <a routerLink="/" fragment="contact" (click)="navigateToSection('contact')"
+                    class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-primary">
+                    Contact
+                    <span>→</span>
+                </a>
+
+
+                <!-- MOBILE CTA -->
+
+                <a routerLink="/" fragment="contact" (click)="navigateToSection('contact')"
+                    class="mt-3 flex items-center justify-center rounded-xl bg-primary px-5 py-3.5 font-bold text-white shadow-lg transition hover:bg-accent">
+                    Request Consultation
+                </a>
+
+            </nav>
 
         </div>
 

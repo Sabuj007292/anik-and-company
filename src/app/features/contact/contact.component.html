@@ -144,321 +144,803 @@
 
 </section>
 
-<section id="contact" class="py-10 bg-gray-100">
-  <!-- Background Blur -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 bg-cyan-200 rounded-full blur-3xl opacity-30"></div>
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
-  <!-- Main Container -->
-  <div class="relative max-w-7xl mx-auto px-6    overflow-hidden py-16">
-    <!-- Section Title -->
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold mb-4 text-primary">
-        Get In Touch
+<section id="contact" class="relative overflow-hidden bg-slate-50 py-16 sm:py-20 lg:py-24">
+  <!-- Background decoration -->
+  <div class="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-cyan-200/30 blur-3xl"></div>
+
+  <div class="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-emerald-200/30 blur-3xl">
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+
+      <div
+        class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-cyan-700 shadow-sm">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-600 text-white">
+          <lucide-angular [img]="icons.zap" class="h-3.5 w-3.5"></lucide-angular>
+        </span>
+
+        Solar & Electrical Solutions
+      </div>
+
+      <h2 class="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+        Let's Plan Your
+        <span class="bg-gradient-to-r from-cyan-600 via-blue-700 to-emerald-500 bg-clip-text text-transparent">
+          Project
+        </span>
       </h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Get in touch with A-NIK & Co. for Civil & Electrical Consultancy Services.
+
+      <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+        Tell us about your solar, electrical or engineering requirement.
+        Our technical team will review your enquiry and contact you shortly.
       </p>
+
     </div>
 
-    <!-- Content -->
-    <div class="grid lg:grid-cols-[380px_1fr] gap-10 items-start">
-      <!-- Left Contact Card -->
-      <div
-        class="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#00b8b0] via-[#146C94] to-[#14B8A6] p-10 text-white">
-        <!-- Decorative Background -->
-        <div class="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-white/10"></div>
-        <div class="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-white/5"></div>
+
+    <!-- ===================================================== -->
+    <!-- MAIN CARD -->
+    <!-- ===================================================== -->
+
+    <div
+      class="grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.10)] lg:grid-cols-[360px_1fr]">
+
+      <!-- ================================================= -->
+      <!-- LEFT INFORMATION -->
+      <!-- ================================================= -->
+
+      <aside class="relative overflow-hidden bg-slate-950 p-7 text-white sm:p-9 lg:p-10">
+
+        <!-- Glow -->
+        <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/20 blur-3xl"></div>
+
+        <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
         <div class="relative z-10">
-          <!-- Company -->
-          <span class="inline-flex rounded-full bg-white/20 px-4 py-1 text-sm font-medium backdrop-blur">
-            A-NIK & Co.
-          </span>
-          <h3 class="mt-5 text-3xl font-bold">
-            Contact Information
+
+          <!-- Brand -->
+          <div class="mb-8 flex items-center gap-3">
+
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-emerald-400 shadow-lg shadow-cyan-500/20">
+              <lucide-angular [img]="icons.sun" class="h-6 w-6 text-slate-950"></lucide-angular>
+            </div>
+
+            <div>
+              <p class="text-lg font-black tracking-wide">
+                A-NIK & Co.
+              </p>
+
+              <p class="text-xs text-slate-400">
+                Engineering & Energy Solutions
+              </p>
+            </div>
+
+          </div>
+
+
+          <h3 class="text-2xl font-bold leading-tight sm:text-3xl">
+            Professional solutions.
+            <span class="text-cyan-400">
+              Reliable execution.
+            </span>
           </h3>
-          <p class="mt-3 text-cyan-100 leading-7">
-            Professional Civil & Electrical Consultancy Services for Residential,
-            Commercial and Industrial Projects.
+
+          <p class="mt-4 text-sm leading-6 text-slate-400">
+            Residential, commercial and industrial solar,
+            electrical and infrastructure consultancy services.
           </p>
-          <!-- Contact Details -->
-          <div class="mt-5 space-y-6">
+
+
+          <!-- CONTACT DETAILS -->
+
+          <div class="mt-9 space-y-5">
+
             <!-- Phone -->
-            <div class="flex items-start gap-4">
-              <div class="relative group">
-                <span class="absolute inset-0 rounded-2xl bg-white/20 animate-ping">
-                </span>
-                <div class="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white/85 shadow-lg">
-                  <lucide-angular [img]="icons.phone" class="h-6 w-6 text-[#0F4C81]">
-                  </lucide-angular>
-                </div>
+            <a href="tel:+919830316065" class="group flex items-center gap-4">
+
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition group-hover:border-cyan-400/40 group-hover:bg-cyan-400/10">
+                <lucide-angular [img]="icons.phone" class="h-5 w-5 text-cyan-400"></lucide-angular>
               </div>
+
               <div>
-                <h4 class="font-semibold text-lg">
-                  Phone
-                </h4>
-                <p class="text-cyan-100">
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">
+                  Call / WhatsApp
+                </p>
+
+                <p class="mt-0.5 font-semibold text-white">
                   +91 98303 16065
                 </p>
               </div>
-            </div>
+
+            </a>
+
 
             <!-- Email -->
-            <div class="flex items-start gap-4">
-              <!-- Icon -->
-              <div class="relative group">
-                <!-- Ping Animation -->
-                <span class="absolute inset-0 rounded-2xl bg-white/20 animate-ping">
-                </span>
-                <!-- Icon Box -->
-                <div class="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white/85 shadow-lg
-             transition-all duration-300
-             group-hover:scale-110
-             group-hover:rotate-6
-             group-hover:bg-white">
+            <a href="mailto:info@anikandco.com" class="group flex items-center gap-4">
 
-                  <lucide-angular [img]="icons.mail"
-                    class="h-5 w-5 text-[#0F4C81] transition-all duration-300 group-hover:text-[#14B8A6]">
-                  </lucide-angular>
-                </div>
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition group-hover:border-emerald-400/40 group-hover:bg-emerald-400/10">
+                <lucide-angular [img]="icons.mail" class="h-5 w-5 text-emerald-400"></lucide-angular>
               </div>
 
-              <!-- Content -->
-              <div>
-                <h4 class="font-semibold text-lg">
+              <div class="min-w-0">
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">
                   Email
-                </h4>
+                </p>
 
-                <a href="mailto:anik2011@yahoo.in"
-                  class="text-cyan-100 hover:text-white transition-colors duration-300 break-all">
-                  anik2011@yahoo.in
-                </a>
+                <p class="mt-0.5 break-all font-semibold text-white">
+                  info@anikandco.com
+                </p>
               </div>
-            </div>
 
-            <!-- Location -->
+            </a>
+
+
+            <!-- Address -->
             <div class="flex items-start gap-4">
 
-              <div class="relative group">
-
-                <span class="absolute inset-0 rounded-2xl bg-white/20 animate-ping">
-                </span>
-
-                <div class="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white/85 shadow-lg
-             transition-all duration-300
-             group-hover:scale-110
-             group-hover:rotate-6
-             group-hover:bg-white">
-
-                  <lucide-angular [img]="icons.mapPin"
-                    class="h-5 w-5 text-[#0F4C81] transition-all duration-300 group-hover:text-[#14B8A6]">
-                  </lucide-angular>
-
-                </div>
-
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+                <lucide-angular [img]="icons.mapPin" class="h-5 w-5 text-cyan-400"></lucide-angular>
               </div>
 
               <div>
-                <h4 class="font-semibold text-lg">
-                  Office Address
-                </h4>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-500">
+                  Office
+                </p>
 
-                <p class="text-cyan-100 leading-6">
-                  AB-394, Samarpally,<br>
-                  Krishnapur Road,<br>
+                <p class="mt-1 text-sm leading-6 text-slate-300">
+                  AB-394, Samarpally,<br />
+                  Krishnapur Road,<br />
                   Bidhannagar, Kolkata - 700102
                 </p>
               </div>
 
             </div>
+
           </div>
 
-          <!-- Divider -->
-          <div class="my-10 h-px bg-white/20"></div>
 
-          <!-- Services -->
-          <div>
+          <!-- SERVICES -->
 
-            <h4 class="mb-5 text-xl font-semibold">
+          <div class="mt-10 border-t border-white/10 pt-8">
+
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
               Our Expertise
-            </h4>
+            </p>
 
             <div class="space-y-3">
 
-              <div class="flex items-center gap-3">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0F4C81] font-bold">
+              <div class="flex items-center gap-3 text-sm text-slate-300">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/10 text-cyan-400">
                   ✓
                 </span>
-                <span>Electrical Substation Consultancy</span>
+                Rooftop Solar Installation
               </div>
 
-              <div class="flex items-center gap-3">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0F4C81] font-bold">
+              <div class="flex items-center gap-3 text-sm text-slate-300">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/10 text-cyan-400">
                   ✓
                 </span>
-                <span>Residential & Commercial Electrical Design</span>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0F4C81] font-bold">
-                  ✓
-                </span>
-                <span>Civil Construction Planning</span>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0F4C81] font-bold">
-                  ✓
-                </span>
-                <span>Industrial Infrastructure Consultation</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Right Side -->
-      <div class="bg-white rounded-3xl shadow-xl p-10">
-
-        <!-- Contact Form -->
-        <!-- <div class="bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-10"> -->
-
-        <div class="mb-8">
-          <h3 class="text-3xl font-bold text-slate-800">
-            Send Us a Message
-          </h3>
-
-          <p class="text-slate-500 mt-2">
-            Have a project in mind? Fill out the form below and we'll get back to you as soon as possible.
-          </p>
-        </div>
-
-        <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-6">
-
-          <!-- Name + Email -->
-          <div class="grid md:grid-cols-2 gap-6">
-
-            <!-- Name -->
-            <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-2">
-                Full Name
-              </label>
-
-              <input type="text" formControlName="name" placeholder="John Doe" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3
-                 focus:outline-none focus:ring-4 focus:ring-cyan-100
-                 focus:border-cyan-500 transition duration-300">
-
-              <small *ngIf="submitted && contactForm.get('name')?.invalid" class="text-red-500">
-                Full Name is required
-              </small>
-
-            </div>
-
-            <!-- Email -->
-            <div>
-
-              <label class="block text-sm font-semibold text-slate-700 mb-2">
-                Email Address
-              </label>
-
-              <input type="email" formControlName="email" placeholder="example@email.com" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3
-                 focus:outline-none focus:ring-4 focus:ring-cyan-100
-                 focus:border-cyan-500 transition duration-300">
-
-              <small *ngIf="submitted && contactForm.get('email')?.invalid" class="text-red-500">
-                Enter a valid email address
-              </small>
-
-            </div>
-
-          </div>
-
-          <!-- Phone -->
-          <div>
-
-            <label class="block text-sm font-semibold text-slate-700 mb-2">
-              Phone Number
-            </label>
-
-            <input type="text" formControlName="phone" placeholder="+91 9876543210" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3
-               focus:outline-none focus:ring-4 focus:ring-cyan-100
-               focus:border-cyan-500 transition duration-300">
-
-            <small *ngIf="submitted && contactForm.get('phone')?.invalid" class="text-red-500">
-              Phone Number is required
-            </small>
-
-          </div>
-
-          <!-- Project Type -->
-          <div>
-
-            <label class="block text-sm font-semibold text-slate-700 mb-2">
-              Project Type
-            </label>
-
-            <select formControlName="projectType" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3
-               focus:outline-none focus:ring-4 focus:ring-cyan-100
-               focus:border-cyan-500 transition duration-300">
-
-              <option value="">Select Project</option>
-
-              <option value="Electrical">
                 Electrical Consultancy
-              </option>
+              </div>
 
-              <option value="Civil">
-                Civil Consultancy
-              </option>
+              <div class="flex items-center gap-3 text-sm text-slate-300">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/10 text-cyan-400">
+                  ✓
+                </span>
+                HT / LT & Substation
+              </div>
 
-              <option value="Industrial">
+              <div class="flex items-center gap-3 text-sm text-slate-300">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/10 text-cyan-400">
+                  ✓
+                </span>
                 Industrial Infrastructure
-              </option>
+              </div>
 
-              <option value="Substation">
-                Electrical Substation
-              </option>
-
-            </select>
-
-            <small *ngIf="submitted && contactForm.get('projectType')?.invalid" class="text-red-500">
-              Please select a project type
-            </small>
+            </div>
 
           </div>
 
-          <!-- Message -->
+        </div>
+
+      </aside>
+
+
+      <!-- ================================================= -->
+      <!-- FORM -->
+      <!-- ================================================= -->
+
+      <main class="p-6 sm:p-9 lg:p-12">
+
+        <!-- Form header -->
+
+        <div class="mb-9">
+
+          <div class="flex items-center justify-between gap-4">
+
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-cyan-600">
+                Enquiry Form
+              </p>
+
+              <h3 class="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">
+                Tell us what you need
+              </h3>
+            </div>
+
+            <div class="hidden h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 sm:flex">
+              <lucide-angular [img]="icons.clipboard" class="h-6 w-6 text-cyan-600"></lucide-angular>
+            </div>
+
+          </div>
+
+          <p class="mt-2 text-sm leading-6 text-slate-500">
+            Fields marked with
+            <span class="font-bold text-red-500">*</span>
+            are required.
+          </p>
+
+        </div>
+
+
+        <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-8">
+
+          <!-- ================================================= -->
+          <!-- CUSTOMER DETAILS -->
+          <!-- ================================================= -->
+
           <div>
 
-            <label class="block text-sm font-semibold text-slate-700 mb-2">
-              Project Details
-            </label>
+            <div class="mb-5 flex items-center gap-3">
 
-            <textarea rows="6" formControlName="message" placeholder="Please describe your project requirements..."
-              class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 resize-none
-               focus:outline-none focus:ring-4 focus:ring-cyan-100
-               focus:border-cyan-500 transition duration-300">
-      </textarea>
+              <div
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-xs font-bold text-white">
+                01
+              </div>
 
-            <small *ngIf="submitted && contactForm.get('message')?.invalid" class="text-red-500">
-              Project details are required
-            </small>
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Customer Information
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  How can we contact you?
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="grid gap-5 md:grid-cols-2">
+
+              <!-- Name -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Full Name
+                  <span class="text-red-500">*</span>
+                </label>
+
+                <div class="relative">
+
+                  <lucide-angular [img]="icons.user"
+                    class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></lucide-angular>
+
+                  <input type="text" formControlName="name" placeholder="Enter your full name"
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-13 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-500/10" />
+
+                </div>
+
+                <p *ngIf="submitted && contactForm.get('name')?.invalid"
+                  class="mt-1.5 text-xs font-medium text-red-500">
+                  Please enter your name.
+                </p>
+
+              </div>
+
+
+              <!-- WhatsApp -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  WhatsApp Number
+                  <span class="text-red-500">*</span>
+                </label>
+
+                <div class="relative">
+
+                  <lucide-angular [img]="icons.messageCircle"
+                    class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-500"></lucide-angular>
+
+                  <input type="tel" formControlName="phone" placeholder="+91 98303 16065"
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-13 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10" />
+
+                </div>
+
+                <p *ngIf="submitted && contactForm.get('phone')?.invalid"
+                  class="mt-1.5 text-xs font-medium text-red-500">
+                  Please enter a valid WhatsApp number.
+                </p>
+
+              </div>
+
+
+              <!-- Email -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Email Address
+                </label>
+
+                <div class="relative">
+
+                  <lucide-angular [img]="icons.mail"
+                    class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></lucide-angular>
+
+                  <input type="email" formControlName="email" placeholder="name@example.com"
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-13 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-500/10" />
+
+                </div>
+
+              </div>
+
+
+              <!-- Location -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Project Location
+                  <span class="text-red-500">*</span>
+                </label>
+
+                <div class="relative">
+
+                  <lucide-angular [img]="icons.mapPin"
+                    class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></lucide-angular>
+
+                  <input type="text" formControlName="location" placeholder="City / Area / District"
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-13 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-500/10" />
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
-          <!-- Button -->
-          <div class="pt-2">
 
-            <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-[#0F4C81] to-[#14B8A6]
-               py-4 text-white font-semibold text-lg
-               shadow-lg hover:shadow-xl
-               hover:scale-[1.02]
-               transition-all duration-300">
+          <!-- ================================================= -->
+          <!-- REQUIREMENT -->
+          <!-- ================================================= -->
 
-              Send Message
+          <div class="border-t border-slate-100 pt-8">
+
+            <div class="mb-5 flex items-center gap-3">
+
+              <div
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-xs font-bold text-white">
+                02
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Select Your Requirement
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  Choose the service you are looking for.
+                </p>
+              </div>
+
+            </div>
+
+
+            <!-- Service cards -->
+
+            <div class="grid gap-3 sm:grid-cols-3">
+
+              <!-- Solar -->
+
+              <button type="button" (click)="selectService('Solar')" [class.border-cyan-500]="
+                  contactForm.get('serviceType')?.value === 'Solar'
+                " [class.bg-cyan-50]="
+                  contactForm.get('serviceType')?.value === 'Solar'
+                "
+                class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
+
+                <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50">
+                  <lucide-angular [img]="icons.sun" class="h-5 w-5 text-amber-500"></lucide-angular>
+                </div>
+
+                <p class="font-bold text-slate-900">
+                  Solar
+                </p>
+
+                <p class="mt-1 text-xs leading-5 text-slate-500">
+                  Rooftop, residential & commercial
+                </p>
+
+              </button>
+
+
+              <!-- Electrical -->
+
+              <button type="button" (click)="selectService('Electrical')" [class.border-blue-500]="
+                  contactForm.get('serviceType')?.value === 'Electrical'
+                " [class.bg-blue-50]="
+                  contactForm.get('serviceType')?.value === 'Electrical'
+                "
+                class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md">
+
+                <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
+                  <lucide-angular [img]="icons.zap" class="h-5 w-5 text-blue-600"></lucide-angular>
+                </div>
+
+                <p class="font-bold text-slate-900">
+                  Electrical
+                </p>
+
+                <p class="mt-1 text-xs leading-5 text-slate-500">
+                  Design, HT/LT & consultancy
+                </p>
+
+              </button>
+
+
+              <!-- Industrial -->
+
+              <button type="button" (click)="selectService('Industrial')" [class.border-emerald-500]="
+                  contactForm.get('serviceType')?.value === 'Industrial'
+                " [class.bg-emerald-50]="
+                  contactForm.get('serviceType')?.value === 'Industrial'
+                "
+                class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
+
+                <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50">
+                  <lucide-angular [img]="icons.factory" class="h-5 w-5 text-emerald-600"></lucide-angular>
+                </div>
+
+                <p class="font-bold text-slate-900">
+                  Industrial
+                </p>
+
+                <p class="mt-1 text-xs leading-5 text-slate-500">
+                  Infrastructure & industrial projects
+                </p>
+
+              </button>
+
+            </div>
+
+            <input type="hidden" formControlName="serviceType" />
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- SOLAR DETAILS -->
+          <!-- ================================================= -->
+
+          <div *ngIf="contactForm.get('serviceType')?.value === 'Solar'"
+            class="rounded-2xl border border-cyan-100 bg-cyan-50/50 p-5 sm:p-6">
+
+            <div class="mb-5 flex items-center gap-3">
+
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm">
+                <lucide-angular [img]="icons.sun" class="h-5 w-5 text-amber-500"></lucide-angular>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Solar Project Details
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  Help us understand your electricity requirement.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="grid gap-5 md:grid-cols-2">
+
+              <!-- Consumer ID -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Consumer ID
+                </label>
+
+                <input type="text" formControlName="consumerId" placeholder="Enter electricity consumer ID"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10" />
+
+              </div>
+
+
+              <!-- Connection -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Connection Type
+                </label>
+
+                <select formControlName="connectionType"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10">
+                  <option value="">Select connection</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Industrial">Industrial</option>
+                </select>
+
+              </div>
+
+
+              <!-- Monthly Bill -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Average Monthly Electricity Bill
+                </label>
+
+                <div class="relative">
+
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">
+                    ₹
+                  </span>
+
+                  <input type="number" formControlName="monthlyBill" placeholder="e.g. 3500"
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-white pl-9 pr-4 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10" />
+
+                </div>
+
+              </div>
+
+
+              <!-- Capacity -->
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Required Solar Capacity
+                </label>
+
+                <select formControlName="solarCapacity"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10">
+                  <option value="">Select capacity</option>
+                  <option value="1kW">1 kW</option>
+                  <option value="2kW">2 kW</option>
+                  <option value="3kW">3 kW</option>
+                  <option value="5kW">5 kW</option>
+                  <option value="10kW">10 kW</option>
+                  <option value="15kW">15 kW</option>
+                  <option value="20kW+">20 kW+</option>
+                  <option value="Not Sure">Not Sure</option>
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- ELECTRICAL DETAILS -->
+          <!-- ================================================= -->
+
+          <div *ngIf="contactForm.get('serviceType')?.value === 'Electrical'"
+            class="rounded-2xl border border-blue-100 bg-blue-50/50 p-5 sm:p-6">
+
+            <div class="mb-5 flex items-center gap-3">
+
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm">
+                <lucide-angular [img]="icons.zap" class="h-5 w-5 text-blue-600"></lucide-angular>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Electrical Requirement
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  Provide basic information about your electrical project.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="grid gap-5 md:grid-cols-2">
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Project Type
+                </label>
+
+                <select formControlName="electricalProject"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10">
+                  <option value="">Select project type</option>
+                  <option value="Electrical Design">
+                    Electrical Design
+                  </option>
+                  <option value="HT/LT Work">
+                    HT / LT Electrical Work
+                  </option>
+                  <option value="Substation">
+                    Electrical Substation
+                  </option>
+                  <option value="Load Enhancement">
+                    Load Enhancement
+                  </option>
+                  <option value="Electrical Consultancy">
+                    Electrical Consultancy
+                  </option>
+                  <option value="Inspection">
+                    Electrical Inspection
+                  </option>
+                </select>
+
+              </div>
+
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Approximate Load
+                </label>
+
+                <input type="text" formControlName="electricalLoad" placeholder="e.g. 100 kVA / 500 kW"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- INDUSTRIAL -->
+          <!-- ================================================= -->
+
+          <div *ngIf="contactForm.get('serviceType')?.value === 'Industrial'"
+            class="rounded-2xl border border-emerald-100 bg-emerald-50/50 p-5 sm:p-6">
+
+            <div class="mb-5 flex items-center gap-3">
+
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm">
+                <lucide-angular [img]="icons.factory" class="h-5 w-5 text-emerald-600"></lucide-angular>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Industrial Project Details
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  Tell us about your industrial requirement.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="grid gap-5 md:grid-cols-2">
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Industry Type
+                </label>
+
+                <input type="text" formControlName="industryType" placeholder="Factory / Warehouse / Office"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10" />
+
+              </div>
+
+
+              <div>
+
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                  Approximate Load
+                </label>
+
+                <input type="text" formControlName="industrialLoad" placeholder="e.g. 250 kW"
+                  class="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- MESSAGE -->
+          <!-- ================================================= -->
+
+          <div class="border-t border-slate-100 pt-8">
+
+            <div class="mb-5 flex items-center gap-3">
+
+              <div
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-xs font-bold text-white">
+                03
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900">
+                  Additional Information
+                </h4>
+
+                <p class="text-xs text-slate-500">
+                  Tell us anything else we should know.
+                </p>
+              </div>
+
+            </div>
+
+
+            <textarea rows="5" formControlName="message"
+              placeholder="Describe your project, site condition, existing electrical setup or any specific requirement..."
+              class="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-6 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-500/10"></textarea>
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- SUBMIT -->
+          <!-- ================================================= -->
+
+          <div
+            class="flex flex-col gap-4 border-t border-slate-100 pt-7 sm:flex-row sm:items-center sm:justify-between">
+
+            <div class="flex items-start gap-3">
+
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-50">
+                <lucide-angular [img]="icons.shieldCheck" class="h-4 w-4 text-emerald-600"></lucide-angular>
+              </div>
+
+              <p class="max-w-sm text-xs leading-5 text-slate-500">
+                Your information is used only to understand your project
+                requirement and contact you regarding the enquiry.
+              </p>
+
+            </div>
+
+
+            <button type="submit" [disabled]="loading"
+              class="group inline-flex h-13 items-center justify-center gap-3 rounded-xl bg-slate-950 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-cyan-600 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60">
+
+              <span *ngIf="!loading">
+                Submit Enquiry
+              </span>
+
+              <span *ngIf="loading">
+                Sending...
+              </span>
+
+              <lucide-angular *ngIf="!loading" [img]="icons.arrowRight"
+                class="h-4 w-4 transition-transform group-hover:translate-x-1"></lucide-angular>
 
             </button>
 
@@ -466,12 +948,11 @@
 
         </form>
 
-      </div>
+      </main>
 
     </div>
 
   </div>
-
 </section>
 
 <section class="mt-24">
@@ -511,10 +992,8 @@
         <div class="space-y-4 text-gray-600">
 
           <div class="d-flex align-items-start gap-2">
-           <lucide-icon
-  [img]="icons.mapPin"
-  [size]="22">
-</lucide-icon>
+            <lucide-icon [img]="icons.mapPin" [size]="22">
+            </lucide-icon>
 
             <div>
               AB-394, Samarpally, Krishnapur,<br>
