@@ -29,7 +29,7 @@
 //   // Mobile Menu Toggle
 //   isOpen = signal(false);
 //   readonly icons = ICONS;
-//    readonly whatsappNumber = '919062777486';
+//    readonly whatsappNumber = '919830316065';
 
 //   readonly whatsappMessage =
 //     'Hello A-NIK & CO., I am interested in your solar installation services. Please share more details.';
@@ -53,7 +53,7 @@
 //     {
 //       icon: 'whatsapp',
 //       label: 'WhatsApp',
-//       value: '+91 9062777486',
+//       value: '+91 9830316065',
 //       href: this.whatsappLink
 //     },
 //     {
@@ -188,7 +188,7 @@ export class HeaderComponent {
   // WHATSAPP
   // =====================================================
 
-  readonly whatsappNumber = '919062777486';
+  readonly whatsappNumber = '919830316065';
 
 
   readonly whatsappMessage =
@@ -210,7 +210,7 @@ export class HeaderComponent {
     {
       icon: 'whatsapp',
       label: 'WhatsApp',
-      value: '+91 9062777486',
+      value: '+91 9830316065',
       href: this.whatsappLink
     },
 
