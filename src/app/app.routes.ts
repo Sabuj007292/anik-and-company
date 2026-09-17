@@ -13,6 +13,12 @@ export const routes: Routes = [
             .then(m => m.HomeComponent)
       },
       {
+        path: 'rooftop-solar',
+        loadComponent: () =>
+          import('./features/rooftop-solar/rooftop-solar.component')
+            .then(m => m.RooftopSolarComponent)
+      },
+      {
         path: 'about',
         loadComponent: () =>
           import('./features/about/about.component')

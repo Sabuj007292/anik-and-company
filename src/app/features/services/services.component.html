@@ -1,56 +1,181 @@
+<section id="services" class="services-section">
 
-<section id="services" class="py-24 bg-gray-50 text-center">
-  <h2 class="text-4xl font-bold text-primary mb-16">Our Services</h2>
+  <div class="services-container">
 
-  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+    <!-- SECTION HEADER -->
+    <div class="services-header">
 
-    <div class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-      <div class="text-primary text-4xl mb-4">🏗</div>
-      <h3 class="text-xl font-semibold mb-4">Civil Engineering</h3>
-      <p class="text-gray-600">
-        Structural design, RCC detailing, site supervision and estimation.
+      <div class="services-label">
+        <span class="services-label-dot"></span>
+        <span>WHAT WE DO</span>
+        <span class="services-label-line"></span>
+      </div>
+
+      <h2 class="services-title">
+        Our
+        <span>Services</span>
+      </h2>
+
+      <p class="services-description">
+        Integrated engineering, technology and energy solutions
+        designed to deliver reliable results for every project.
       </p>
+
     </div>
 
-    <div class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-      <div class="text-accent text-4xl mb-4">⚡</div>
-      <h3 class="text-xl font-semibold mb-4">Electrical Engineering</h3>
-      <p class="text-gray-600">
-        Load calculations, layout planning, substation & solar consultancy.
-      </p>
-    </div>
 
-    <div class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-    <div class="text-primary text-4xl mb-4">💻</div>
-    <h3 class="text-xl font-semibold mb-4">IT Services</h3>
-    <p class="text-gray-600">
-        Reliable IT solutions including network setup, system maintenance, software support, CCTV installation, and technical consulting.
-    </p>
-</div>
+    <!-- SERVICES GRID -->
+    <div class="services-grid">
 
-<a class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300" routerLink="/solar">
-    <div class="text-primary text-4xl mb-4">☀️</div>
-    <h3 class="text-xl font-semibold mb-4">Solar Energy Solutions</h3>
-    <p class="text-gray-600">
-        Professional solar panel installation, maintenance, and energy-efficient solutions for residential, commercial, and industrial projects.
-    </p>
-  </a>
 
-<div class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-    <div class="text-primary text-4xl mb-4">🌐</div>
-    <h3 class="text-xl font-semibold mb-4">Web Application Development</h3>
-    <p class="text-gray-600">
-        Custom web application development, responsive websites, e-commerce solutions, API integration, and ongoing maintenance tailored to your business needs.
-    </p>
-</div>
+      <!-- CIVIL -->
+      <div class="service-card service-card-1">
 
-    <div class="bg-white p-10 rounded-xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-      <div class="text-primary text-4xl mb-4">📊</div>
-      <h3 class="text-xl font-semibold mb-4">Project Consultancy</h3>
-      <p class="text-gray-600">
-        Complete planning, budgeting and project execution management.
-      </p>
+        <div class="service-icon civil-icon">
+          🏗
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">01</span>
+
+          <h3>Civil Engineering</h3>
+
+          <p>
+            Structural design, RCC detailing, site supervision
+            and estimation for residential, commercial and
+            industrial projects.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
+
+      <!-- ELECTRICAL -->
+      <div class="service-card service-card-2">
+
+        <div class="service-icon electrical-icon">
+          ⚡
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">02</span>
+
+          <h3>Electrical Engineering</h3>
+
+          <p>
+            Load calculations, electrical layout planning,
+            power distribution, substation and solar
+            consultancy services.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
+
+      <!-- IT -->
+      <div class="service-card service-card-3">
+
+        <div class="service-icon it-icon">
+          💻
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">03</span>
+
+          <h3>IT Services</h3>
+
+          <p>
+            Reliable IT solutions including network setup,
+            system maintenance, software support, CCTV
+            installation and technical consulting.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
+
+      <!-- SOLAR -->
+      <a
+        routerLink="/solar"
+        class="service-card service-card-4 service-link"
+      >
+
+        <div class="service-icon solar-icon">
+          ☀
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">04</span>
+
+          <h3>Solar Energy Solutions</h3>
+
+          <p>
+            Professional solar panel installation,
+            maintenance and energy-efficient solutions
+            for residential, commercial and industrial projects.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </a>
+
+
+      <!-- WEB DEVELOPMENT -->
+      <div class="service-card service-card-5">
+
+        <div class="service-icon web-icon">
+          🌐
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">05</span>
+
+          <h3>Web Application Development</h3>
+
+          <p>
+            Custom web applications, responsive websites,
+            e-commerce solutions, API integration and
+            ongoing technical maintenance.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
+
+      <!-- CONSULTANCY -->
+      <div class="service-card service-card-6">
+
+        <div class="service-icon consultancy-icon">
+          📊
+        </div>
+
+        <div class="service-content">
+          <span class="service-number">06</span>
+
+          <h3>Project Consultancy</h3>
+
+          <p>
+            Complete project planning, budgeting,
+            coordination and execution management
+            from concept to completion.
+          </p>
+        </div>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>

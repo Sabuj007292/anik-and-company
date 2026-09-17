@@ -1,128 +1,13 @@
-// import { CommonModule } from '@angular/common';
-// import { Component, HostListener, signal } from '@angular/core';
-// import { RouterLink } from '@angular/router';
-// import { SharedModule } from '../common/shared.module';
-// import { IconName, ICONS } from '../common/icon-map';
-
-// interface ContactItem {
-//   icon: IconName;
-//   label: string;
-//   value: string;
-//   href: string;
-// }
-
-// interface SocialLink {
-//   icon: IconName;
-//   label: string;
-//   href: string;
-//   class: string;
-// }
-
-// @Component({
-//   selector: 'app-header',
-//   imports: [CommonModule, RouterLink, SharedModule],
-//   templateUrl: './header.component.html',
-//   styleUrl: './header.component.css',
-// })
-// export class HeaderComponent {
-
-//   // Mobile Menu Toggle
-//   isOpen = signal(false);
-//   readonly icons = ICONS;
-//    readonly whatsappNumber = '919830316065';
-
-//   readonly whatsappMessage =
-//     'Hello A-NIK & CO., I am interested in your solar installation services. Please share more details.';
-
-//   readonly whatsappLink =
-//     `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
-//       this.whatsappMessage
-//     )}`;
-  
-
-//   toggleMenu() {
-//     this.isOpen.update(v => !v);
-//   }
-
-//   // Active Section (Scroll Spy)
-//   activeSection: string = 'home';
-
-//   @HostListener('window:scroll', [])
-
-//   readonly contactItems: ContactItem[] = [
-//     {
-//       icon: 'whatsapp',
-//       label: 'WhatsApp',
-//       value: '+91 9830316065',
-//       href: this.whatsappLink
-//     },
-//     {
-//       icon: 'mail',
-//       label: 'Email',
-//       value: 'info@anikandco.com',
-//       href: 'mailto:info@anikandco.com'
-//     }
-//   ];
-
-//   readonly socialLinks = [
-//     {
-//       icon: 'facebook' as IconName,
-//       label: 'Facebook',
-//       href: '#',
-//       class: 'facebook'
-//     },
-//     {
-//       icon: 'linkedin' as IconName,
-//       label: 'LinkedIn',
-//       href: '#',
-//       class: 'linkedin'
-//     },
-//     {
-//       icon: 'instagram' as IconName,
-//       label: 'Instagram',
-//       href: '#',
-//       class: 'instagram'
-//     }
-//   ];
-//   onScroll() {
-
-//     const sections = ['home', 'about', 'services', 'projects', 'contact'];
-
-//     for (let section of sections) {
-//       const element = document.getElementById(section);
-//       if (element) {
-//         const rect = element.getBoundingClientRect();
-//         if (rect.top <= 150 && rect.bottom >= 150) {
-//           this.activeSection = section;
-//         }
-//       }
-//     }
-//   }
-// }
-
-import {
-  CommonModule
-} from '@angular/common';
-
+import { CommonModule } from '@angular/common';
 import {
   Component,
   HostListener,
   signal
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
-import {
-  RouterLink
-} from '@angular/router';
-
-import {
-  SharedModule
-} from '../common/shared.module';
-
-import {
-  IconName,
-  ICONS
-} from '../common/icon-map';
-
+import { SharedModule } from '../common/shared.module';
+import { IconName, ICONS } from '../common/icon-map';
 
 interface ContactItem {
   icon: IconName;
@@ -131,7 +16,6 @@ interface ContactItem {
   href: string;
 }
 
-
 interface SocialLink {
   icon: IconName;
   label: string;
@@ -139,22 +23,17 @@ interface SocialLink {
   class: string;
 }
 
-
 @Component({
   selector: 'app-header',
-
   imports: [
     CommonModule,
     RouterLink,
     SharedModule
   ],
-
   templateUrl: './header.component.html',
-
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
 
   // =====================================================
   // MOBILE MENU
@@ -164,17 +43,31 @@ export class HeaderComponent {
 
 
   // =====================================================
-  // SCROLL STATE
+  // HEADER SCROLL STATE
   // =====================================================
 
   scrolled = signal(false);
 
 
   // =====================================================
-  // ACTIVE SECTION
+  // ACTIVE NAVIGATION
   // =====================================================
 
   activeSection = 'home';
+
+
+  // =====================================================
+  // SECTION LIST
+  // =====================================================
+
+  private readonly sections = [
+    'home',
+    'rooftop-solar',
+    'about',
+    'services',
+    'projects',
+    'contact'
+  ];
 
 
   // =====================================================
@@ -190,10 +83,8 @@ export class HeaderComponent {
 
   readonly whatsappNumber = '919830316065';
 
-
   readonly whatsappMessage =
     'Hello A-NIK & CO., I am interested in your solar installation services. Please share more details.';
-
 
   readonly whatsappLink =
     `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
@@ -259,22 +150,12 @@ export class HeaderComponent {
   // =====================================================
 
   toggleMenu(): void {
-
-    this.isOpen.update(
-      value => !value
-    );
-
+    this.isOpen.update(value => !value);
   }
 
 
-  // =====================================================
-  // CLOSE MOBILE MENU
-  // =====================================================
-
   closeMenu(): void {
-
     this.isOpen.set(false);
-
   }
 
 
@@ -290,73 +171,58 @@ export class HeaderComponent {
       document.documentElement.scrollTop ||
       0;
 
+    // Header shrink state
+    this.scrolled.set(scrollPosition > 30);
 
-    // Header scroll state
-
-    this.scrolled.set(
-      scrollPosition > 30
-    );
-
-
-    // Update active section
-
+    // Auto active navigation
     this.updateActiveSection();
-
   }
 
 
   // =====================================================
-  // ACTIVE SECTION / SCROLL SPY
+  // SCROLL SPY
   // =====================================================
 
   private updateActiveSection(): void {
 
-    const sections = [
-      'home',
-      'about',
-      'services',
-      'projects',
-      'contact'
-    ];
+    const header = document.querySelector('header');
 
+    const headerHeight =
+      header?.getBoundingClientRect().height ?? 80;
 
-    const scrollPosition =
-      window.scrollY + 150;
+    /*
+     * Position used to determine which section
+     * is currently visible.
+     */
+    const spyPosition =
+      headerHeight + 100;
 
+    let currentSection = 'home';
 
-    for (const section of sections) {
+    for (const sectionId of this.sections) {
 
-      const element =
-        document.getElementById(section);
+      const section =
+        document.getElementById(sectionId);
 
-
-      if (!element) {
+      if (!section) {
         continue;
       }
 
+      const rect =
+        section.getBoundingClientRect();
 
-      const sectionTop =
-        element.offsetTop;
-
-
-      const sectionBottom =
-        sectionTop +
-        element.offsetHeight;
-
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionBottom
-      ) {
-
-        this.activeSection = section;
-
-        break;
-
+      /*
+       * If section has reached the scroll-spy line,
+       * make it active.
+       */
+      if (rect.top <= spyPosition) {
+        currentSection = sectionId;
       }
-
     }
 
+    if (this.activeSection !== currentSection) {
+      this.activeSection = currentSection;
+    }
   }
 
 
@@ -364,12 +230,66 @@ export class HeaderComponent {
   // NAVIGATION
   // =====================================================
 
-  navigateToSection(section: string): void {
+  navigateToSection(
+    sectionId: string,
+    event?: Event
+  ): void {
 
-    this.activeSection = section;
+    // Stop normal anchor/router jump
+    event?.preventDefault();
 
+    const section =
+      document.getElementById(sectionId);
+
+    if (!section) {
+      console.warn(
+        `Section #${sectionId} was not found.`
+      );
+
+      return;
+    }
+
+    const header =
+      document.querySelector('header');
+
+    const headerHeight =
+      header?.getBoundingClientRect().height ?? 80;
+
+    const sectionTop =
+      section.getBoundingClientRect().top +
+      window.scrollY;
+
+    const targetPosition =
+      sectionTop - headerHeight;
+
+    // Set active tab immediately
+    this.activeSection = sectionId;
+
+    // Close mobile menu
     this.closeMenu();
 
+    // Smooth scroll
+    window.scrollTo({
+      top: Math.max(targetPosition, 0),
+      behavior: 'smooth'
+    });
   }
 
+
+  // =====================================================
+  // CALCULATE SOLAR SYSTEM
+  // =====================================================
+
+  calculateSystem(): void {
+
+    const message =
+      `Hello A-NIK & CO.%0A%0A` +
+      `I want to calculate my rooftop solar system size.%0A` +
+      `Please guide me regarding the required system capacity and quotation.`;
+
+    window.open(
+      `https://wa.me/919830316065?text=${message}`,
+      '_blank'
+    );
+  }
 }

@@ -1,0 +1,2620 @@
+/* =========================================================
+   A-NIK & CO.
+   PREMIUM SOLAR HERO
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.solar-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 820px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #ffffff 48%,
+      #eef8ff 100%
+    );
+
+  color: #172033;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.32;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 90, 140, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 90, 140, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      transparent 85%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      transparent 85%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND ORBS
+   ========================================================= */
+
+.hero-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(2px);
+
+  opacity: 0.7;
+}
+
+
+.hero-orb-one {
+  width: 520px;
+  height: 520px;
+
+  top: -260px;
+  right: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(245, 180, 0, 0.18) 0%,
+      rgba(245, 180, 0, 0.07) 40%,
+      transparent 72%
+    );
+
+  animation:
+    heroOrbFloat
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+.hero-orb-two {
+  width: 420px;
+  height: 420px;
+
+  left: -220px;
+  bottom: -220px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(14, 116, 144, 0.12) 0%,
+      rgba(14, 116, 144, 0.04) 45%,
+      transparent 72%
+    );
+
+  animation:
+    heroOrbFloatReverse
+    10s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes heroOrbFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-20px, 20px, 0);
+  }
+
+}
+
+
+@keyframes heroOrbFloatReverse {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(25px, -18px, 0);
+  }
+
+}
+
+
+/* =========================================================
+   SUN RAYS
+   ========================================================= */
+
+.sun-rays {
+  position: absolute;
+
+  top: 90px;
+  right: 12%;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  opacity: 0.22;
+
+  animation:
+    sunRayRotation
+    28s
+    linear
+    infinite;
+}
+
+
+.sun-rays span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 2px;
+  height: 105px;
+
+  transform-origin: center bottom;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(245, 180, 0, 0.65),
+      transparent
+    );
+
+  border-radius: 50%;
+}
+
+
+.sun-rays span:nth-child(1) {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.sun-rays span:nth-child(2) {
+  transform: translate(-50%, -100%) rotate(60deg);
+}
+
+.sun-rays span:nth-child(3) {
+  transform: translate(-50%, -100%) rotate(120deg);
+}
+
+.sun-rays span:nth-child(4) {
+  transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.sun-rays span:nth-child(5) {
+  transform: translate(-50%, -100%) rotate(240deg);
+}
+
+.sun-rays span:nth-child(6) {
+  transform: translate(-50%, -100%) rotate(300deg);
+}
+
+
+@keyframes sunRayRotation {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   HERO INNER
+   ========================================================= */
+
+.hero-inner {
+  position: relative;
+
+  width: min(1380px, calc(100% - 80px));
+
+  min-height: 690px;
+
+  margin: 0 auto;
+
+  padding:
+    95px 0
+    70px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.hero-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  line-height: 1.4;
+}
+
+
+.eyebrow-status {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 5px rgba(34, 197, 94, 0.1);
+
+  animation:
+    eyebrowPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+.eyebrow-line {
+  width: 35px;
+  height: 1px;
+
+  background:
+    #cbd5e1;
+}
+
+
+@keyframes eyebrowPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero-title {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(46px, 5vw, 76px);
+
+  font-weight: 500;
+
+  letter-spacing: -3.5px;
+
+  line-height: 0.98;
+}
+
+
+.hero-title > span {
+  display: inline-block;
+
+  color: #e5a900;
+
+  font-weight: 800;
+}
+
+
+.hero-title strong {
+  display: inline-block;
+
+  margin-top: 9px;
+
+  color: #172033;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero-description {
+  max-width: 590px;
+
+  margin:
+    28px 0
+    30px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  font-weight: 450;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.hero-benefits {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+
+.hero-benefit {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+
+  padding: 12px;
+
+  border:
+    1px solid rgba(203, 213, 225, 0.65);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.hero-benefit:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+.benefit-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background:
+    rgba(245, 180, 0, 0.12);
+
+  color: #e5a900;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+
+.benefit-content {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.benefit-content strong {
+  color: #172033;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+
+.benefit-content small {
+  overflow: hidden;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.hero-primary-btn {
+  min-height: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  padding:
+    0 21px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background:
+    #172033;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 28px rgba(23, 32, 51, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.hero-primary-btn:hover {
+  transform: translateY(-3px);
+
+  background:
+    #253149;
+
+  box-shadow:
+    0 17px 35px rgba(23, 32, 51, 0.24);
+}
+
+
+.button-arrow {
+  width: 25px;
+  height: 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  font-size: 14px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.hero-primary-btn:hover .button-arrow {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* WHATSAPP */
+
+.hero-whatsapp-btn {
+  min-height: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    0 20px;
+
+  border:
+    1px solid rgba(34, 197, 94, 0.25);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  color: #172033;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.hero-whatsapp-btn:hover {
+  transform: translateY(-3px);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(34, 197, 94, 0.12);
+}
+
+
+.whatsapp-symbol {
+  width: 23px;
+  height: 23px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #22c55e;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TRUST
+   ========================================================= */
+
+.hero-trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding-top: 3px;
+}
+
+
+.trust-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+
+.trust-check {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(34, 197, 94, 0.1);
+
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+
+.trust-item > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+
+.trust-item strong {
+  color: #334155;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.trust-item small {
+  color: #94a3b8;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+
+.trust-divider {
+  width: 1px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  background:
+    #e2e8f0;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+   ========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 570px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   VISUAL GLOW
+   ========================================================= */
+
+.visual-glow {
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(245, 180, 0, 0.19) 0%,
+      rgba(245, 180, 0, 0.08) 35%,
+      transparent 70%
+    );
+
+  filter: blur(5px);
+
+  animation:
+    visualGlowPulse
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes visualGlowPulse {
+
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   DECORATIVE RINGS
+   ========================================================= */
+
+.visual-ring {
+  position: absolute;
+
+  border:
+    1px solid rgba(245, 180, 0, 0.16);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.visual-ring-one {
+  width: 530px;
+  height: 530px;
+
+  animation:
+    ringRotate
+    22s
+    linear
+    infinite;
+}
+
+
+.visual-ring-two {
+  width: 420px;
+  height: 420px;
+
+  border-color:
+    rgba(14, 116, 144, 0.12);
+
+  animation:
+    ringRotateReverse
+    28s
+    linear
+    infinite;
+}
+
+
+@keyframes ringRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes ringRotateReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+/* =========================================================
+   MAIN IMAGE CARD
+   ========================================================= */
+
+.solar-image-card {
+  position: relative;
+
+  width: min(530px, 80%);
+
+  aspect-ratio: 1 / 0.88;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   IMAGE INNER
+   ========================================================= */
+
+.solar-image-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(241, 247, 251, 0.8)
+    );
+
+  box-shadow:
+    0 35px 80px rgba(15, 23, 42, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+.solar-image-inner img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 30px;
+
+  position: relative;
+
+  z-index: 1;
+
+  filter:
+    drop-shadow(
+      0 20px 25px
+      rgba(15, 23, 42, 0.13)
+    );
+}
+
+
+.solar-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 42%,
+      rgba(245, 180, 0, 0.04)
+    );
+}
+
+
+/* =========================================================
+   SOLAR SUN
+   ========================================================= */
+
+.solar-sun {
+  position: absolute;
+
+  top: 22px;
+  right: 25px;
+
+  width: 78px;
+  height: 78px;
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sun-halo {
+  position: absolute;
+
+  inset: -12px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(245, 180, 0, 0.28),
+      transparent 68%
+    );
+
+  animation:
+    sunHaloPulse
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+.sun-core {
+  position: relative;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffd85a,
+      #f5b400
+    );
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 12px 30px rgba(245, 180, 0, 0.3);
+
+  animation:
+    sunCoreFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes sunHaloPulse {
+
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes sunCoreFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+   ========================================================= */
+
+.floating-card {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  min-width: 210px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  z-index: 20;
+
+  will-change: transform;
+
+  transition:
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   PROJECT CARD POSITION
+   ========================================================= */
+
+.project-floating {
+  left: -45px;
+  top: 85px;
+
+  animation:
+    projectCardFloat
+    4.8s
+    cubic-bezier(0.45, 0, 0.55, 1)
+    infinite;
+}
+
+
+/* =========================================================
+   ENERGY CARD POSITION
+   ========================================================= */
+
+.energy-floating {
+  right: -45px;
+  bottom: 75px;
+
+  animation:
+    energyCardFloat
+    5.2s
+    cubic-bezier(0.45, 0, 0.55, 1)
+    0.8s
+    infinite;
+}
+
+
+/* =========================================================
+   PROJECT FLOAT
+   ========================================================= */
+
+@keyframes projectCardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+
+/* =========================================================
+   ENERGY FLOAT
+   ========================================================= */
+
+@keyframes energyCardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING ICONS
+   ========================================================= */
+
+.project-floating .floating-icon,
+.energy-floating .energy-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background:
+    rgba(245, 180, 0, 0.12);
+
+  color: #f5b400;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.floating-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+.floating-content small {
+  display: block;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+.floating-content strong {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   LIVE DOT
+   ========================================================= */
+
+.green-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.12);
+
+  animation:
+    greenDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes greenDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0.65;
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING CARD HOVER
+   ========================================================= */
+
+.floating-card:hover {
+
+  background:
+    #ffffff;
+
+  border-color:
+    rgba(245, 180, 0, 0.18);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.22);
+}
+
+
+.project-floating:hover .floating-icon,
+.energy-floating:hover .energy-icon {
+
+  transform: scale(1.06);
+
+  background:
+    rgba(245, 180, 0, 0.18);
+}
+
+
+/* =========================================================
+   CAPACITY CARD
+   ========================================================= */
+
+.capacity-floating {
+  position: absolute;
+
+  right: 5px;
+  top: 40px;
+
+  width: 180px;
+
+  padding: 16px;
+
+  z-index: 25;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.14);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  animation:
+    capacityFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes capacityFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+.capacity-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 9px;
+}
+
+
+.capacity-header > span {
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+
+.capacity-live {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #16a34a;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+
+.capacity-live > span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+
+.capacity-number {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  margin-bottom: 9px;
+}
+
+
+.capacity-number strong {
+  color: #172033;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.capacity-number span {
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.capacity-progress {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  margin-bottom: 8px;
+
+  border-radius: 10px;
+
+  background:
+    #e2e8f0;
+}
+
+
+.capacity-progress span {
+  display: block;
+
+  width: 72%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f5b400,
+      #ffd45c
+    );
+
+  transform-origin: left center;
+
+  animation:
+    capacityProgress
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes capacityProgress {
+
+  0% {
+    transform: scaleX(0.65);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0.65);
+  }
+
+}
+
+
+.capacity-floating p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SAVINGS CARD
+   ========================================================= */
+
+.savings-floating {
+  position: absolute;
+
+  left: 0;
+  bottom: 30px;
+
+  z-index: 25;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 205px;
+
+  padding: 13px 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.14);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  animation:
+    savingsFloat
+    5.8s
+    ease-in-out
+    0.5s
+    infinite;
+}
+
+
+@keyframes savingsFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+}
+
+
+.savings-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background:
+    rgba(34, 197, 94, 0.1);
+
+  color: #16a34a;
+
+  font-size: 19px;
+
+  font-weight: 900;
+}
+
+
+.savings-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.savings-content small {
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.savings-content > div {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+}
+
+
+.savings-content strong {
+  color: #172033;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+
+.savings-content span {
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DECORATIVE DOTS
+   ========================================================= */
+
+.visual-dots {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #f5b400;
+
+  box-shadow:
+    0 0 0 5px rgba(245, 180, 0, 0.08);
+
+  z-index: 4;
+
+  animation:
+    dotsPulse
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+.dots-one {
+  top: 115px;
+  left: 12%;
+}
+
+
+.dots-two {
+  right: 8%;
+  bottom: 105px;
+
+  width: 5px;
+  height: 5px;
+
+  animation-delay: 1s;
+}
+
+
+@keyframes dotsPulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.hero-stats {
+  position: relative;
+
+  width: min(1120px, calc(100% - 80px));
+
+  min-height: 100px;
+
+  margin:
+    0 auto
+    30px;
+
+  padding:
+    20px 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: center;
+
+  gap: 22px;
+
+  border:
+    1px solid rgba(203, 213, 225, 0.65);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.06);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  z-index: 10;
+}
+
+
+.hero-stat {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background:
+    rgba(245, 180, 0, 0.1);
+
+  color: #e5a900;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+.stat-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.stat-content strong {
+  color: #172033;
+
+  font-size: 23px;
+
+  font-weight: 850;
+
+  letter-spacing: -0.8px;
+
+  line-height: 1;
+}
+
+
+.stat-content strong span {
+  color: #e5a900;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+.stat-content p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.stat-separator {
+  width: 1px;
+  height: 38px;
+
+  background:
+    #e2e8f0;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+  .hero-inner {
+    width: min(1100px, calc(100% - 60px));
+
+    gap: 45px;
+  }
+
+
+  .hero-title {
+    font-size: clamp(43px, 5vw, 64px);
+  }
+
+
+  .hero-benefits {
+    gap: 8px;
+  }
+
+
+  .hero-benefit {
+    padding: 10px;
+  }
+
+
+  .hero-visual {
+    min-height: 520px;
+  }
+
+
+  .solar-image-card {
+    width: min(490px, 82%);
+  }
+
+
+  .project-floating {
+    left: -25px;
+  }
+
+
+  .energy-floating {
+    right: -25px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .solar-hero {
+    min-height: auto;
+  }
+
+
+  .hero-inner {
+    width: min(760px, calc(100% - 40px));
+
+    padding:
+      75px 0
+      45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+  }
+
+
+  .hero-copy {
+    width: 100%;
+
+    max-width: 720px;
+
+    text-align: center;
+  }
+
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+
+  .hero-visual {
+    width: 100%;
+
+    min-height: 560px;
+  }
+
+
+  .solar-image-card {
+    width: min(500px, 72%);
+  }
+
+
+  .project-floating {
+    left: 3%;
+  }
+
+
+  .energy-floating {
+    right: 3%;
+  }
+
+
+  .capacity-floating {
+    right: 5%;
+    top: 35px;
+  }
+
+
+  .savings-floating {
+    left: 5%;
+    bottom: 30px;
+  }
+
+
+  .hero-stats {
+    width: min(760px, calc(100% - 40px));
+
+    grid-template-columns:
+      1fr auto
+      1fr auto
+      1fr auto
+      1fr;
+
+    gap: 12px;
+
+    padding:
+      18px 15px;
+  }
+
+
+  .stat-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+
+  .stat-content strong {
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .hero-inner {
+    width: calc(100% - 30px);
+
+    padding:
+      60px 0
+      30px;
+
+    gap: 45px;
+  }
+
+
+  .hero-title {
+    font-size: clamp(39px, 10vw, 54px);
+
+    letter-spacing: -2.5px;
+  }
+
+
+  .hero-description {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-benefits {
+    grid-template-columns: 1fr;
+
+    max-width: 360px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .hero-benefit {
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+
+
+  .hero-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .hero-primary-btn,
+  .hero-whatsapp-btn {
+    width: min(100%, 320px);
+  }
+
+
+  .hero-trust {
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+
+  .trust-divider {
+    display: none;
+  }
+
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+
+  .solar-image-card {
+    width: 76%;
+  }
+
+
+  .solar-image-inner {
+    border-radius: 22px;
+  }
+
+
+  .solar-image-inner img {
+    padding: 18px;
+  }
+
+
+  .visual-ring-one {
+    width: 430px;
+    height: 430px;
+  }
+
+
+  .visual-ring-two {
+    width: 350px;
+    height: 350px;
+  }
+
+
+  .visual-glow {
+    width: 450px;
+    height: 450px;
+  }
+
+
+  .project-floating {
+    left: -2px;
+    top: 65px;
+
+    min-width: 175px;
+
+    padding: 10px 12px;
+
+    gap: 9px;
+  }
+
+
+  .energy-floating {
+    right: -2px;
+    bottom: 65px;
+
+    min-width: 175px;
+
+    padding: 10px 12px;
+
+    gap: 9px;
+  }
+
+
+  .project-floating .floating-icon,
+  .energy-floating .energy-icon {
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+  }
+
+
+  .floating-content small {
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .floating-content strong {
+    font-size: 11px;
+  }
+
+
+  .capacity-floating {
+    width: 150px;
+
+    right: 0;
+
+    top: 20px;
+
+    padding: 12px;
+
+    border-radius: 13px;
+  }
+
+
+  .capacity-number strong {
+    font-size: 23px;
+  }
+
+
+  .savings-floating {
+    left: 0;
+
+    bottom: 25px;
+
+    min-width: 175px;
+
+    padding: 11px 12px;
+  }
+
+
+  .savings-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 16px;
+  }
+
+
+  .savings-content strong {
+    font-size: 13px;
+  }
+
+
+  .hero-stats {
+    width: calc(100% - 30px);
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 15px;
+  }
+
+
+  .stat-separator {
+    display: none;
+  }
+
+
+  .hero-stat {
+    justify-content: flex-start;
+  }
+
+
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+
+
+  .stat-content strong {
+    font-size: 18px;
+  }
+
+
+  .stat-content p {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .hero-inner {
+    width: calc(100% - 24px);
+
+    padding-top: 48px;
+  }
+
+
+  .hero-eyebrow {
+    gap: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .eyebrow-line {
+    width: 22px;
+  }
+
+
+  .hero-title {
+    font-size: clamp(35px, 11vw, 48px);
+
+    letter-spacing: -2px;
+  }
+
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+
+  .solar-image-card {
+    width: 73%;
+  }
+
+
+  .solar-image-inner img {
+    padding: 12px;
+  }
+
+
+  .project-floating {
+    left: -5px;
+
+    top: 55px;
+
+    min-width: 155px;
+
+    padding: 9px 10px;
+  }
+
+
+  .energy-floating {
+    right: -5px;
+
+    bottom: 55px;
+
+    min-width: 155px;
+
+    padding: 9px 10px;
+  }
+
+
+  .project-floating .floating-icon,
+  .energy-floating .energy-icon {
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 14px;
+  }
+
+
+  .floating-content small {
+    font-size: 6px;
+  }
+
+
+  .floating-content strong {
+    font-size: 10px;
+  }
+
+
+  .capacity-floating {
+    width: 135px;
+
+    padding: 10px;
+
+    top: 5px;
+  }
+
+
+  .capacity-header > span {
+    font-size: 7px;
+  }
+
+
+  .capacity-number strong {
+    font-size: 21px;
+  }
+
+
+  .savings-floating {
+    min-width: 155px;
+
+    bottom: 15px;
+  }
+
+
+  .savings-icon {
+    width: 31px;
+    height: 31px;
+
+    font-size: 14px;
+  }
+
+
+  .savings-content small {
+    font-size: 7px;
+  }
+
+
+  .savings-content strong {
+    font-size: 11px;
+  }
+
+
+  .savings-content span {
+    font-size: 7px;
+  }
+
+
+  .hero-stats {
+    width: calc(100% - 24px);
+
+    padding: 13px;
+
+    gap: 12px;
+  }
+
+
+  .stat-icon {
+    width: 29px;
+    height: 29px;
+
+    font-size: 12px;
+  }
+
+
+  .stat-content strong {
+    font-size: 16px;
+  }
+
+
+  .stat-content p {
+    font-size: 7px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+
+  .solar-image-card {
+    width: 70%;
+  }
+
+
+  .project-floating {
+    left: -8px;
+
+    min-width: 140px;
+  }
+
+
+  .energy-floating {
+    right: -8px;
+
+    min-width: 140px;
+  }
+
+
+  .capacity-floating {
+    width: 120px;
+  }
+
+
+  .savings-floating {
+    min-width: 140px;
+  }
+
+
+  .floating-content strong {
+    font-size: 9px;
+  }
+
+
+  .floating-content small {
+    font-size: 5.5px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .solar-hero *,
+  .solar-hero *::before,
+  .solar-hero *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}

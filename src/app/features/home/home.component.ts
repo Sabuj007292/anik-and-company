@@ -15,11 +15,12 @@ import { AboutComponent } from "../about/about.component";
 import { ServicesComponent } from "../services/services.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ContactComponent } from "../contact/contact.component";
+import { RooftopSolarComponent } from '../rooftop-solar/rooftop-solar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent, AboutComponent, ServicesComponent, ProjectsComponent, ContactComponent],
+  imports: [HeroComponent, RooftopSolarComponent, AboutComponent, ServicesComponent, ProjectsComponent, ContactComponent],
   // template: `<app-hero></app-hero>`
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
