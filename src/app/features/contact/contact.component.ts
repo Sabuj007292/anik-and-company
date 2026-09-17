@@ -121,7 +121,7 @@ export class ContactComponent {
   console.log('Contact Enquiry Payload:', payload);
 
   this.http.post<any>(
-    'http://localhost:5000/api/contact',
+    'http://www.anikandco.com/api/contact',
     payload
   ).subscribe({
 
