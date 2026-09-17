@@ -133,7 +133,7 @@
   display: block;
 
   width: auto;
-  height: 62px;
+  height: 92px;
 
   max-width: 220px;
 
@@ -340,7 +340,7 @@
 }
 
 
-.footer-links a span {
+.footer-links a app-icon {
   color: #e5a900;
 
   opacity: 0;
@@ -350,6 +350,12 @@
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
+}
+
+.footer-links a:hover app-icon {
+  opacity: 1;
+
+  transform: translateX(0);
 }
 
 
@@ -778,7 +784,7 @@
   }
 
   .footer-logo img {
-    height: 54px;
+    height: 74px;
   }
 
   .footer-cta {

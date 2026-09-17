@@ -7,7 +7,11 @@ import {
 import { RouterLink } from '@angular/router';
 
 import { SharedModule } from '../common/shared.module';
-import { IconName, ICONS } from '../common/icon-map';
+import {
+  IconName,
+  ICONS
+} from '../common/icon-map';
+import { AppIconComponent } from '../common/app-icon.component';
 
 interface ContactItem {
   icon: IconName;
@@ -25,11 +29,16 @@ interface SocialLink {
 
 @Component({
   selector: 'app-header',
+
+  // IMPORTANT
+  standalone: true,
+
   imports: [
     CommonModule,
     RouterLink,
-    SharedModule
+    AppIconComponent,
   ],
+
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -39,14 +48,14 @@ export class HeaderComponent {
   // MOBILE MENU
   // =====================================================
 
-  isOpen = signal(false);
+  readonly isOpen = signal(false);
 
 
   // =====================================================
   // HEADER SCROLL STATE
   // =====================================================
 
-  scrolled = signal(false);
+  readonly scrolled = signal(false);
 
 
   // =====================================================
@@ -71,7 +80,7 @@ export class HeaderComponent {
 
 
   // =====================================================
-  // ICONS
+  // ICON MAP
   // =====================================================
 
   readonly icons = ICONS;
@@ -171,10 +180,10 @@ export class HeaderComponent {
       document.documentElement.scrollTop ||
       0;
 
-    // Header shrink state
+    // Header shrink / scroll state
     this.scrolled.set(scrollPosition > 30);
 
-    // Auto active navigation
+    // Update active navigation
     this.updateActiveSection();
   }
 
@@ -185,15 +194,12 @@ export class HeaderComponent {
 
   private updateActiveSection(): void {
 
-    const header = document.querySelector('header');
+    const header =
+      document.querySelector('header');
 
     const headerHeight =
       header?.getBoundingClientRect().height ?? 80;
 
-    /*
-     * Position used to determine which section
-     * is currently visible.
-     */
     const spyPosition =
       headerHeight + 100;
 
@@ -211,10 +217,6 @@ export class HeaderComponent {
       const rect =
         section.getBoundingClientRect();
 
-      /*
-       * If section has reached the scroll-spy line,
-       * make it active.
-       */
       if (rect.top <= spyPosition) {
         currentSection = sectionId;
       }
@@ -235,13 +237,13 @@ export class HeaderComponent {
     event?: Event
   ): void {
 
-    // Stop normal anchor/router jump
     event?.preventDefault();
 
     const section =
       document.getElementById(sectionId);
 
     if (!section) {
+
       console.warn(
         `Section #${sectionId} was not found.`
       );
@@ -262,7 +264,7 @@ export class HeaderComponent {
     const targetPosition =
       sectionTop - headerHeight;
 
-    // Set active tab immediately
+    // Active navigation
     this.activeSection = sectionId;
 
     // Close mobile menu

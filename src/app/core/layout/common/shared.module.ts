@@ -1,39 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  NgModule
+} from '@angular/core';
 
 import {
-  LucideAngularModule,
-  PhoneCall,
-  Mail,
-  Clock,
-  Menu,
-  X,
-  Facebook,
-  Linkedin,
-  Instagram,
-  MapPin
-} from 'lucide-angular';
+  CommonModule
+} from '@angular/common';
+
 
 @NgModule({
-  imports: [
-    CommonModule,
 
-    LucideAngularModule.pick({
-      PhoneCall,
-      Mail,
-      Clock,
-      Menu,
-      X,
-      Facebook,
-      Linkedin,
-      Instagram,
-      MapPin
-    })
+  imports: [
+    CommonModule
   ],
 
   exports: [
-    CommonModule,
-    LucideAngularModule
+    CommonModule
   ]
+
 })
 export class SharedModule {}

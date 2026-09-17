@@ -1,8 +1,12 @@
 <footer class="anik-footer">
 
-  <!-- Background -->
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
   <div class="footer-grid"></div>
   <div class="footer-glow"></div>
+
 
   <div class="footer-container">
 
@@ -12,7 +16,11 @@
 
     <div class="footer-main">
 
-      <!-- COMPANY -->
+
+      <!-- ===================================================
+           COMPANY
+           =================================================== -->
+
       <div class="footer-company">
 
         <a
@@ -21,10 +29,11 @@
           aria-label="A-NIK & CO. Home"
         >
           <img
-            src="assets/logo.png"
+            src="/images/logo/logo_solar3.png"
             alt="A-NIK & CO."
           >
         </a>
+
 
         <p class="footer-description">
           A-NIK & CO. delivers professional engineering,
@@ -32,40 +41,77 @@
           solutions with quality, precision and reliability.
         </p>
 
+
+        <!-- TAGLINE -->
+
         <div class="footer-tagline">
+
           <span></span>
+
           Powering Solutions • Building Trust
+
         </div>
 
-        <!-- SOCIAL -->
+
+        <!-- SOCIAL TITLE -->
+
         <div class="footer-social-title">
           FOLLOW US
         </div>
 
+
+        <!-- SOCIAL -->
+
         <div class="footer-social">
 
+          <!-- LINKEDIN -->
+
           <a
             href="#"
-            class="footer-social-link"
+            class="footer-social-link linkedin"
             aria-label="LinkedIn"
           >
-            <i class="fab fa-linkedin-in"></i>
+
+            <app-icon
+              name="linkedin"
+              [size]="18"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </a>
+
+
+          <!-- FACEBOOK -->
 
           <a
             href="#"
-            class="footer-social-link"
+            class="footer-social-link facebook"
             aria-label="Facebook"
           >
-            <i class="fab fa-facebook-f"></i>
+
+            <app-icon
+              name="facebook"
+              [size]="18"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </a>
+
+
+          <!-- INSTAGRAM -->
 
           <a
             href="#"
-            class="footer-social-link"
+            class="footer-social-link instagram"
             aria-label="Instagram"
           >
-            <i class="fab fa-instagram"></i>
+
+            <app-icon
+              name="instagram"
+              [size]="18"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </a>
 
         </div>
@@ -73,60 +119,121 @@
       </div>
 
 
-      <!-- =====================================================
+      <!-- ===================================================
            SERVICES
-           ===================================================== -->
+           =================================================== -->
 
       <div class="footer-column">
 
         <div class="footer-heading">
+
           <span></span>
+
           OUR SERVICES
+
         </div>
 
-        <h3>Engineering & Solutions</h3>
+
+        <h3>
+          Engineering &amp; Solutions
+        </h3>
+
 
         <ul class="footer-links">
 
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              Civil Engineering
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Civil Engineering</span>
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              Electrical Engineering
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Electrical Engineering</span>
             </a>
           </li>
+
 
           <li>
             <a routerLink="/solar">
-              <span>↗</span>
-              Solar EPC
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Solar EPC</span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              IT Services
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>IT Services</span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              Web Application Development
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>
+                Web Application Development
+              </span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              Project Consultancy
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Project Consultancy</span>
+
             </a>
           </li>
 
@@ -135,53 +242,106 @@
       </div>
 
 
-      <!-- =====================================================
+      <!-- ===================================================
            COMPANY
-           ===================================================== -->
+           =================================================== -->
 
       <div class="footer-column">
 
         <div class="footer-heading">
+
           <span></span>
+
           COMPANY
+
         </div>
 
-        <h3>Quick Navigation</h3>
+
+        <h3>
+          Quick Navigation
+        </h3>
+
 
         <ul class="footer-links">
 
           <li>
-            <a routerLink="/" fragment="home">
-              <span>↗</span>
-              Home
+            <a
+              routerLink="/"
+              fragment="home"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Home</span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="about">
-              <span>↗</span>
-              About Us
+            <a
+              routerLink="/"
+              fragment="about"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>About Us</span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="services">
-              <span>↗</span>
-              Services
+            <a
+              routerLink="/"
+              fragment="services"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Services</span>
+
             </a>
           </li>
 
+
           <li>
-            <a routerLink="/" fragment="projects">
-              <span>↗</span>
-              Projects
+            <a
+              routerLink="/"
+              fragment="projects"
+            >
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Projects</span>
+
             </a>
           </li>
+
 
           <li>
             <a routerLink="/contact">
-              <span>↗</span>
-              Contact
+
+              <app-icon
+                name="arrowUpRight"
+                [size]="14"
+              ></app-icon>
+
+              <span>Contact</span>
+
             </a>
           </li>
 
@@ -190,76 +350,114 @@
       </div>
 
 
-      <!-- =====================================================
+      <!-- ===================================================
            CONTACT
-           ===================================================== -->
+           =================================================== -->
 
       <div class="footer-column footer-contact">
 
         <div class="footer-heading">
+
           <span></span>
+
           CONTACT
+
         </div>
 
-        <h3>Get In Touch</h3>
+
+        <h3>
+          Get In Touch
+        </h3>
 
 
         <!-- ADDRESS -->
+
         <div class="contact-item">
 
           <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
+
+            <app-icon
+              name="mapPin"
+              [size]="21"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </div>
 
+
           <div>
+
             <span class="contact-label">
               OUR OFFICE
             </span>
+
 
             <p>
               AB-394, Samarpally,<br>
               Krishnapur Road,<br>
               Kolkata - 700102
             </p>
+
           </div>
 
         </div>
 
 
         <!-- EMAIL -->
+
         <div class="contact-item">
 
           <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
+
+            <app-icon
+              name="mail"
+              [size]="21"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </div>
 
+
           <div>
+
             <span class="contact-label">
               EMAIL
             </span>
+
 
             <a
               href="mailto:anik2011@yahoo.in"
               class="contact-value"
             >
-              anik2011@yahoo.in
+             info@anikandco.com
             </a>
+
           </div>
 
         </div>
 
 
         <!-- PHONE -->
+
         <div class="contact-item">
 
           <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
+
+            <app-icon
+              name="phone"
+              [size]="21"
+              [strokeWidth]="1.8"
+            ></app-icon>
+
           </div>
 
+
           <div>
+
             <span class="contact-label">
               PHONE
             </span>
+
 
             <a
               href="tel:+919830316065"
@@ -267,6 +465,7 @@
             >
               +91 98303 16065
             </a>
+
           </div>
 
         </div>
@@ -288,10 +487,17 @@
           READY TO START?
         </span>
 
+
         <h3>
+
           Let's Build Something
-          <span>Better.</span>
+
+          <span>
+            Better.
+          </span>
+
         </h3>
+
 
         <p>
           Discuss your engineering, solar, electrical or
@@ -300,12 +506,23 @@
 
       </div>
 
+
       <a
         routerLink="/contact"
         class="footer-cta-button"
       >
-        <span>Contact Our Team</span>
-        <span>↗</span>
+
+        <span>
+          Contact Our Team
+        </span>
+
+
+        <app-icon
+          name="arrowUpRight"
+          [size]="18"
+          [strokeWidth]="2"
+        ></app-icon>
+
       </a>
 
     </div>
@@ -317,10 +534,19 @@
 
     <div class="footer-bottom">
 
+
       <div class="footer-copyright">
-        © 2026 <strong>A-NIK & CO.</strong>
+
+        © 2026
+
+        <strong>
+          A-NIK &amp; CO.
+        </strong>
+
         All Rights Reserved.
+
       </div>
+
 
       <div class="footer-legal">
 
@@ -328,10 +554,12 @@
           Privacy Policy
         </a>
 
+
         <span></span>
 
+
         <a routerLink="/terms">
-          Terms & Conditions
+          Terms &amp; Conditions
         </a>
 
       </div>
@@ -351,7 +579,13 @@
     aria-label="Back to top"
     (click)="scrollToTop()"
   >
-    <i class="fas fa-arrow-up"></i>
+
+    <app-icon
+      name="arrowUp"
+      [size]="20"
+      [strokeWidth]="2"
+    ></app-icon>
+
   </button>
 
 </footer>

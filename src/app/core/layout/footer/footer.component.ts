@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { AppIconComponent } from '../common/app-icon.component';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  standalone: true,
+  imports: [AppIconComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })

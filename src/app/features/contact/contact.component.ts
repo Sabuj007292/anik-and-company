@@ -1,318 +1,200 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
-  Validators,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  Validators
 } from '@angular/forms';
-
-import { ContactService } from '../../services-api/contact.service';
-import { SharedModule } from '../../core/layout/common/shared.module';
-import { ICONS } from '../../core/layout/common/icon-map';
+import { HttpClient } from '@angular/common/http';
+import { AppIconComponent } from '../../core/layout/common/app-icon.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    AppIconComponent
   ],
-
-  templateUrl: './contact.component.html'
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css'
 })
 export class ContactComponent {
 
-  contactForm!: FormGroup;
+  private readonly API_URL =
+    'http://localhost:5000/api/contact';
+
+  contactForm: FormGroup;
 
   submitted = false;
-  loading = false;
+  isSubmitting = false;
 
-  readonly icons = ICONS;
+  successMessage = '';
+  errorMessage = '';
 
+  services = [
+    'Solar EPC',
+    'Electrical Engineering',
+    'Civil Engineering',
+    'IT Services',
+    'Web Application Development',
+    'Project Consultancy',
+    'Other'
+  ];
 
   constructor(
     private fb: FormBuilder,
-    private contactService: ContactService
+    private http: HttpClient
   ) {
-
-    this.createForm();
-
-  }
-
-
-  /**
-   * Create enquiry form
-   */
-  private createForm(): void {
 
     this.contactForm = this.fb.group({
 
-      // ============================================
-      // CUSTOMER INFORMATION
-      // ============================================
+      fullName: [
+        '',
+        Validators.required
+      ],
 
-      name: [
+      mobile: [
         '',
         [
           Validators.required,
-          Validators.minLength(2)
+          Validators.pattern(/^[0-9+\-\s()]{10,16}$/)
         ]
       ],
 
       email: [
         '',
-        [
-          Validators.email
-        ]
-      ],
-
-      phone: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^[6-9]\d{9}$/)
-        ]
+        Validators.email
       ],
 
       location: [
         '',
-        [
-          Validators.required
-        ]
+        Validators.required
       ],
 
-
-      // ============================================
-      // MAIN SERVICE
-      // ============================================
-
-      serviceType: [
+      service: [
         '',
-        [
-          Validators.required
-        ]
+        Validators.required
       ],
-
-
-      // ============================================
-      // SOLAR DETAILS
-      // ============================================
-
-      consumerId: [
-        ''
-      ],
-
-      connectionType: [
-        ''
-      ],
-
-      monthlyBill: [
-        ''
-      ],
-
-      solarCapacity: [
-        ''
-      ],
-
-
-      // ============================================
-      // ELECTRICAL DETAILS
-      // ============================================
-
-      electricalProject: [
-        ''
-      ],
-
-      electricalLoad: [
-        ''
-      ],
-
-
-      // ============================================
-      // INDUSTRIAL DETAILS
-      // ============================================
-
-      industryType: [
-        ''
-      ],
-
-      industrialLoad: [
-        ''
-      ],
-
-
-      // ============================================
-      // ADDITIONAL MESSAGE
-      // ============================================
 
       message: [
-        ''
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10)
+        ]
       ]
 
     });
-
   }
 
 
-  /**
-   * Select Solar / Electrical / Industrial
-   */
-  selectService(service: string): void {
-
-    this.contactForm.patchValue({
-      serviceType: service
-    });
-
-    // Reset service-specific fields
-    if (service !== 'Solar') {
-
-      this.contactForm.patchValue({
-        consumerId: '',
-        connectionType: '',
-        monthlyBill: '',
-        solarCapacity: ''
-      });
-
-    }
-
-
-    if (service !== 'Electrical') {
-
-      this.contactForm.patchValue({
-        electricalProject: '',
-        electricalLoad: ''
-      });
-
-    }
-
-
-    if (service !== 'Industrial') {
-
-      this.contactForm.patchValue({
-        industryType: '',
-        industrialLoad: ''
-      });
-
-    }
-
-  }
-
-
-  /**
-   * Submit enquiry
-   */
-  submitForm(): void {
-
-    this.submitted = true;
-
-
-    // Stop if invalid
-    if (this.contactForm.invalid) {
-
-      this.contactForm.markAllAsTouched();
-
-      return;
-
-    }
-
-
-    this.loading = true;
-
-
-    const enquiryData = this.contactForm.value;
-
-
-    console.log(
-      'Solar / Electrical Enquiry:',
-      enquiryData
-    );
-
-
-    this.contactService
-      .saveContact(enquiryData)
-      .subscribe({
-
-        next: (response) => {
-
-          console.log(
-            'Enquiry saved successfully:',
-            response
-          );
-
-
-          this.loading = false;
-
-
-          alert(
-            'Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.'
-          );
-
-
-          this.contactForm.reset();
-
-          this.submitted = false;
-
-        },
-
-
-        error: (error) => {
-
-          console.error(
-            'Enquiry submission error:',
-            error
-          );
-
-
-          this.loading = false;
-
-
-          alert(
-            'Unable to submit your enquiry right now. Please try again or contact us on WhatsApp.'
-          );
-
-        }
-
-      });
-
-  }
-
-
-  /**
-   * Easy access to form controls
-   */
   get f() {
-
     return this.contactForm.controls;
-
   }
 
 
-  /**
-   * Check if a field is invalid
-   */
-  isInvalid(controlName: string): boolean {
+ submitForm(): void {
 
-    const control = this.contactForm.get(controlName);
+  this.submitted = true;
 
-    return !!(
-      control &&
-      control.invalid &&
-      (control.touched || this.submitted)
+  this.successMessage = '';
+  this.errorMessage = '';
+
+  if (this.contactForm.invalid) {
+    this.contactForm.markAllAsTouched();
+    return;
+  }
+
+  this.isSubmitting = true;
+
+  const payload = {
+    fullName: this.contactForm.get('fullName')?.value,
+    mobile: this.contactForm.get('mobile')?.value,
+    email: this.contactForm.get('email')?.value,
+    location: this.contactForm.get('location')?.value,
+    service: this.contactForm.get('service')?.value,
+    message: this.contactForm.get('message')?.value
+  };
+
+  console.log('Contact Enquiry Payload:', payload);
+
+  this.http.post<any>(
+    'http://localhost:5000/api/contact',
+    payload
+  ).subscribe({
+
+    next: (response) => {
+
+      console.log('API Success:', response);
+
+      this.isSubmitting = false;
+
+      this.successMessage =
+        response?.message ||
+        'Your enquiry has been submitted successfully.';
+
+      this.contactForm.reset();
+
+      this.submitted = false;
+    },
+
+    error: (error) => {
+
+      console.error('API Error:', error);
+
+      this.isSubmitting = false;
+
+      this.errorMessage =
+        error?.error?.message ||
+        'Unable to submit enquiry. Please try again.';
+    }
+
+  });
+}
+
+
+  openWhatsApp(): void {
+
+    const message =
+      'Hello A-NIK & CO., I would like to discuss a project requirement.';
+
+    const url =
+      `https://wa.me/919830316065?text=${encodeURIComponent(message)}`;
+
+    window.open(
+      url,
+      '_blank'
     );
-
   }
 
 
-  /**
-   * Check selected service
-   */
-  isService(service: string): boolean {
+  callCompany(): void {
 
-    return this.contactForm.get('serviceType')?.value === service;
+    window.location.href =
+      'tel:+919830316065';
+  }
 
+
+  sendEmail(): void {
+
+    window.location.href =
+      'mailto:info@anikandco.com';
+  }
+
+
+  openMap(): void {
+
+    const query =
+      encodeURIComponent(
+        'A-NIK & CO., Haldia, West Bengal'
+      );
+
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${query}`,
+      '_blank'
+    );
   }
 
 }

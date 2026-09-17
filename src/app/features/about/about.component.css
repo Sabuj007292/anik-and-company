@@ -24,7 +24,7 @@
    ========================================================= */
 
 .about-container {
-  width: min(1280px, calc(100% - 80px));
+  /* width: min(1280px, calc(100% - 80px)); */
 
   margin: 0 auto;
 
