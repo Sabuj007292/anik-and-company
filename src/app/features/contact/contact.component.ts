@@ -23,7 +23,7 @@ import { AppIconComponent } from '../../core/layout/common/app-icon.component';
 export class ContactComponent {
 
   private readonly API_URL =
-    'http://localhost:5000/api/contact';
+    'https://www.anikandco.com/api/contact';
 
   contactForm: FormGroup;
 
@@ -121,7 +121,7 @@ export class ContactComponent {
   console.log('Contact Enquiry Payload:', payload);
 
   this.http.post<any>(
-    'http://www.anikandco.com/api/contact',
+    'https://www.anikandco.com/api/contact',
     payload
   ).subscribe({
 
