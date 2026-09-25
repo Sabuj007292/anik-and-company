@@ -22,8 +22,9 @@
         </div>
 
         <p class="projects-intro">
-          Delivering reliable engineering, electrical, infrastructure,
-          and consultancy solutions with precision and professionalism.
+          Delivering reliable engineering, electrical, solar,
+          infrastructure, and consultancy solutions with precision
+          and professionalism.
         </p>
 
       </div>
@@ -36,14 +37,23 @@
          ===================================================== -->
     <div class="projects-grid">
 
-      <!-- PROJECT 01 -->
-      <article class="project-card">
+
+      <!-- ===================================================
+           PROJECT 01 - SOLAR
+           =================================================== -->
+      <article
+        class="project-card solar-project-card"
+        routerLink="/projects/solar-project"
+        tabindex="0"
+        role="link"
+        aria-label="View all solar projects">
 
         <div class="project-image">
 
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
-            alt="Residential Building Project"
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276"
+            alt="Rooftop Solar Installation Project"
+            loading="lazy"
           />
 
           <div class="project-overlay"></div>
@@ -53,11 +63,66 @@
           </div>
 
           <div class="project-arrow">
+
             <app-icon
               name="arrowUpRight"
               [size]="22"
               [strokeWidth]="1.8">
             </app-icon>
+
+          </div>
+
+          <div class="project-content">
+
+            <span class="project-category">
+              SOLAR EPC
+            </span>
+
+            <h3>
+              Rooftop Solar Installation
+            </h3>
+
+            <p>
+              Complete rooftop solar EPC solutions including site
+              survey, system design, installation, electrical
+              integration and commissioning.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PROJECT 02 - CIVIL
+           =================================================== -->
+      <article class="project-card">
+
+        <div class="project-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
+            alt="Residential Building Project"
+            loading="lazy"
+          />
+
+          <div class="project-overlay"></div>
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div class="project-arrow">
+
+            <app-icon
+              name="arrowUpRight"
+              [size]="22"
+              [strokeWidth]="1.8">
+            </app-icon>
+
           </div>
 
           <div class="project-content">
@@ -82,7 +147,10 @@
       </article>
 
 
-      <!-- PROJECT 02 -->
+
+      <!-- ===================================================
+           PROJECT 03 - ELECTRICAL
+           =================================================== -->
       <article class="project-card">
 
         <div class="project-image">
@@ -90,20 +158,23 @@
           <img
             src="https://media.istockphoto.com/id/900114204/photo/high-power-station.jpg?s=612x612&w=0&k=20&c=Nv4FOlKePEEkPK4I0dCQu1SRzqgYOYhQJnk7h9qV6wI="
             alt="Electrical Substation Design"
+            loading="lazy"
           />
 
           <div class="project-overlay"></div>
 
           <div class="project-number">
-            02
+            03
           </div>
 
           <div class="project-arrow">
+
             <app-icon
               name="arrowUpRight"
               [size]="22"
               [strokeWidth]="1.8">
             </app-icon>
+
           </div>
 
           <div class="project-content">
@@ -128,7 +199,10 @@
       </article>
 
 
-      <!-- PROJECT 03 -->
+
+      <!-- ===================================================
+           PROJECT 04 - CONSULTANCY
+           =================================================== -->
       <article class="project-card">
 
         <div class="project-image">
@@ -136,20 +210,23 @@
           <img
             src="https://poetsandquantsforundergrads.com/wp-content/uploads/sites/3/2019/09/consulting.jpg"
             alt="Commercial Complex Consultancy"
+            loading="lazy"
           />
 
           <div class="project-overlay"></div>
 
           <div class="project-number">
-            03
+            04
           </div>
 
           <div class="project-arrow">
+
             <app-icon
               name="arrowUpRight"
               [size]="22"
               [strokeWidth]="1.8">
             </app-icon>
+
           </div>
 
           <div class="project-content">
@@ -173,11 +250,12 @@
 
       </article>
 
+
     </div>
 
 
     <!-- =====================================================
-         BOTTOM CTA
+         PROJECT FOOTER / CTA
          ===================================================== -->
     <div class="projects-footer">
 
@@ -192,7 +270,9 @@
         routerLink="/contact"
         class="projects-button">
 
-        <span>Start Your Project</span>
+        <span>
+          Start Your Project
+        </span>
 
         <app-icon
           name="arrowUpRight"

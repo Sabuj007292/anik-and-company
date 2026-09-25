@@ -9,57 +9,71 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./features/home/home.component')
-            .then(m => m.HomeComponent)
+          import('./features/home/home.component').then((m) => m.HomeComponent),
       },
       {
         path: 'rooftop-solar',
         loadComponent: () =>
-          import('./features/rooftop-solar/rooftop-solar.component')
-            .then(m => m.RooftopSolarComponent)
+          import('./features/rooftop-solar/rooftop-solar.component').then(
+            (m) => m.RooftopSolarComponent,
+          ),
       },
       {
         path: 'about',
         loadComponent: () =>
-          import('./features/about/about.component')
-            .then(m => m.AboutComponent)
+          import('./features/about/about.component').then(
+            (m) => m.AboutComponent,
+          ),
       },
       {
         path: 'services',
         loadComponent: () =>
-          import('./features/services/services.component')
-            .then(m => m.ServicesComponent)
+          import('./features/services/services.component').then(
+            (m) => m.ServicesComponent,
+          ),
       },
       {
         path: 'projects',
         loadComponent: () =>
-          import('./features/projects/projects.component')
-            .then(m => m.ProjectsComponent)
+          import('./features/projects/projects.component').then(
+            (m) => m.ProjectsComponent,
+          ),
       },
       {
         path: 'contact',
         loadComponent: () =>
-          import('./features/contact/contact.component')
-            .then(m => m.ContactComponent)
+          import('./features/contact/contact.component').then(
+            (m) => m.ContactComponent,
+          ),
       },
       {
         path: 'login',
         loadComponent: () =>
-          import('./features/login/login.component')
-            .then(m => m.LoginComponent)
+          import('./features/login/login.component').then(
+            (m) => m.LoginComponent,
+          ),
       },
       {
         path: 'solar',
         loadComponent: () =>
-          import('./features/solar page/solar/solar.component')
-            .then(m => m.SolarComponent)
+          import('./features/solar page/solar/solar.component').then(
+            (m) => m.SolarComponent,
+          ),
       },
       {
         path: 'solar/on_grid_solar',
         loadComponent: () =>
-          import('./features/solar page/on_grid_solar/on_grid_solar.component')
-            .then(m => m.On_grid_solarComponent)
-      }
-    ]
-  }
+          import('./features/solar page/on_grid_solar/on_grid_solar.component').then(
+            (m) => m.On_grid_solarComponent,
+          ),
+      },
+      {
+        path: 'projects/solar-project',
+        loadComponent: () =>
+          import('./features/components/projects/solar-projects/solar-projects.component').then(
+            (m) => m.SolarProjectsComponent,
+          ),
+      },
+    ],
+  },
 ];

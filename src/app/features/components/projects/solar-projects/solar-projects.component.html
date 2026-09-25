@@ -1,0 +1,338 @@
+<section class="solar-projects-section">
+
+  <div class="solar-projects-container">
+
+    <!-- BACK TO PROJECTS -->
+    <a
+      routerLink="/"
+      fragment="projects"
+      class="back-projects">
+
+      <span class="back-icon">←</span>
+
+      <span>
+        Back to Projects
+      </span>
+
+    </a>
+
+
+    <!-- PAGE HEADER -->
+    <header class="solar-projects-header">
+
+      <div class="section-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          SOLAR PROJECTS
+        </span>
+
+      </div>
+
+
+      <h1>
+        Our
+        <span>Solar Installations</span>
+      </h1>
+
+
+      <p>
+        Real installations. Real sites. Real results.
+      </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         CAPACITY FILTER
+         ===================================================== -->
+
+    <div class="solar-filters">
+
+      @for (
+        category of categories;
+        track category
+      ) {
+
+        <button
+          type="button"
+          class="solar-filter-button"
+
+          [class.active]="activeCategory === category"
+
+          (click)="setCategory(category)">
+
+          {{ category }}
+
+        </button>
+
+      }
+
+    </div>
+
+
+    <!-- =====================================================
+         SELECTED CAPACITY
+         ===================================================== -->
+
+    <div class="selected-capacity">
+
+      @if (activeCategory === 'ALL') {
+
+        <span>
+          All Solar Installations
+        </span>
+
+      } @else {
+
+        <span>
+          {{ activeCategory }} Solar Installations
+        </span>
+
+      }
+
+      <strong>
+        {{ filteredProjects.length }}
+        Project{{ filteredProjects.length !== 1 ? 's' : '' }}
+      </strong>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROJECT GRID
+         ===================================================== -->
+
+    <div class="solar-project-grid">
+
+      @for (
+        project of filteredProjects;
+        track project.id
+      ) {
+
+        <article class="solar-project-card">
+
+
+          <!-- =================================================
+               SITE IMAGE
+               ================================================= -->
+
+          <div class="solar-project-image">
+
+            <img
+              [src]="project.image"
+              [alt]="
+                project.capacity +
+                ' solar installation - ' +
+                project.clientName
+              "
+              loading="lazy"
+            />
+
+
+            <div class="solar-image-overlay"></div>
+
+
+            <!-- CAPACITY -->
+
+            <div class="solar-capacity">
+
+              {{ project.capacity }}
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="solar-project-category">
+
+              {{ project.category }}
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               PROJECT DETAILS
+               ================================================= -->
+
+          <div class="solar-project-content">
+
+
+            <!-- SCHEME -->
+
+            <div class="solar-scheme">
+
+              <span class="scheme-dot"></span>
+
+              <span>
+                {{ project.scheme }}
+              </span>
+
+            </div>
+
+
+            <!-- PROJECT META -->
+
+            <div class="solar-project-meta">
+
+              <span>
+                SOLAR EPC
+              </span>
+
+              <span>
+                {{ project.location }}
+              </span>
+
+            </div>
+
+
+            <!-- PROJECT TITLE -->
+
+            <h2>
+              {{ project.title }}
+            </h2>
+
+
+            <!-- =================================================
+                 CLIENT
+                 ================================================= -->
+
+            <div class="solar-detail-row">
+
+              <span class="detail-label">
+                Client
+              </span>
+
+              <span class="detail-value">
+                {{ project.clientName }}
+              </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOCATION
+                 ================================================= -->
+
+            <div class="solar-detail-row">
+
+              <span class="detail-label">
+                Location
+              </span>
+
+              <span class="detail-value">
+                {{ project.location }}
+              </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 SYSTEM
+                 ================================================= -->
+
+            <div class="solar-detail-row">
+
+              <span class="detail-label">
+                System
+              </span>
+
+              <span class="detail-value">
+                {{ project.capacity }} Rooftop Solar
+              </span>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <p>
+              {{ project.description }}
+            </p>
+
+
+            <!-- FOOTER -->
+
+            <div class="solar-project-footer">
+
+              <span>
+                Completed Project
+              </span>
+
+              <span class="solar-arrow">
+                ↗
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+
+    <!-- =====================================================
+         EMPTY STATE
+         ===================================================== -->
+
+    @if (filteredProjects.length === 0) {
+
+      <div class="solar-empty">
+
+        <h3>
+          No projects available
+        </h3>
+
+        <p>
+          Solar projects for this capacity will be added soon.
+        </p>
+
+      </div>
+
+    }
+
+
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
+
+    <div class="solar-project-cta">
+
+      <div>
+
+        <span>
+          START YOUR SOLAR PROJECT
+        </span>
+
+        <h2>
+          Ready to switch to solar?
+        </h2>
+
+      </div>
+
+
+      <a
+        routerLink="/contact"
+        class="solar-cta-button">
+
+        <span>
+          Get a Consultation
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
