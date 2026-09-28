@@ -1,0 +1,1422 @@
+<div class="solar-page">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+
+  <section class="solar-hero">
+
+    <!-- Background Images -->
+    <div class="hero-background">
+
+      <div class="hero-image hero-image-1"></div>
+      <div class="hero-image hero-image-2"></div>
+      <div class="hero-image hero-image-3"></div>
+
+      <div class="hero-dark-overlay"></div>
+      <div class="hero-grid"></div>
+
+    </div>
+
+
+    <div class="solar-container hero-content">
+
+      <div class="hero-grid-layout">
+
+        <!-- LEFT -->
+        <div class="hero-left">
+
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+
+            COMPLETE SOLAR EPC SOLUTIONS
+
+          </div>
+
+
+          <h1>
+
+            Power Your Future With
+
+            <span>
+              Clean Solar Energy
+            </span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Smart, reliable and professionally engineered
+            solar solutions for homes, businesses and
+            industrial applications.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <button
+              type="button"
+              class="btn-primary"
+              (click)="openQuote()">
+
+              <span>Get Solar Quote</span>
+
+              <span class="button-arrow">
+                →
+              </span>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="btn-outline"
+              (click)="scrollTo('solar-solutions')">
+
+              Explore Solutions
+
+            </button>
+
+          </div>
+
+
+          <!-- TRUST PILLS -->
+
+          <div class="hero-trust">
+
+            <div class="trust-item">
+              <span>✓</span>
+              On-Grid
+            </div>
+
+            <div class="trust-item">
+              <span>✓</span>
+              Off-Grid
+            </div>
+
+            <div class="trust-item">
+              <span>✓</span>
+              Hybrid
+            </div>
+
+            <div class="trust-item">
+              <span>✓</span>
+              Solar EPC
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="hero-right">
+
+          <div class="hero-energy-card">
+
+            <div class="energy-card-top">
+
+              <span class="energy-label">
+                SOLAR EPC
+              </span>
+
+              <span class="energy-icon">
+                ☀
+              </span>
+
+            </div>
+
+
+            <div class="energy-main">
+
+              <span class="energy-small">
+                END-TO-END
+              </span>
+
+              <strong>
+                Solar
+                <br>
+                Solutions
+              </strong>
+
+            </div>
+
+
+            <div class="energy-services">
+
+              <div>
+                <span>01</span>
+                Design
+              </div>
+
+              <div>
+                <span>02</span>
+                Supply
+              </div>
+
+              <div>
+                <span>03</span>
+                Installation
+              </div>
+
+              <div>
+                <span>04</span>
+                Commissioning
+              </div>
+
+            </div>
+
+
+            <div class="energy-bottom">
+
+              <span>
+                A-NIK & CO.
+              </span>
+
+              <span>
+                SOLAR • ELECTRICAL • EPC
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- FLOATING CARD -->
+
+          <div class="floating-energy-card">
+
+            <span class="floating-icon">
+              ⚡
+            </span>
+
+            <div>
+              <strong>
+                Smart Energy
+              </strong>
+
+              <small>
+                Built for tomorrow
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- HERO BOTTOM -->
+    <div class="hero-bottom">
+
+      <div class="solar-container">
+
+        <div class="hero-bottom-grid">
+
+          <div>
+            <strong>
+              01
+            </strong>
+
+            <span>
+              Site Assessment
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              02
+            </strong>
+
+            <span>
+              Engineering
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              03
+            </strong>
+
+            <span>
+              Installation
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              04
+            </strong>
+
+            <span>
+              Net Metering
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECTION HEADER
+  ============================================================ -->
+
+  <section class="section solar-solutions-section"
+           id="solar-solutions">
+
+    <div class="solar-container">
+
+      <div class="section-heading">
+
+        <div class="section-eyebrow">
+          SOLAR SOLUTIONS
+        </div>
+
+        <h2>
+          Choose The Right
+          <span>Solar System</span>
+        </h2>
+
+        <p>
+          From grid-connected rooftops to independent
+          battery-backed systems, we design solutions
+          according to your energy requirement.
+        </p>
+
+      </div>
+
+
+      <!-- SOLUTION CARDS -->
+
+      <div class="solutions-grid">
+
+        <button
+          type="button"
+          *ngFor="let solution of solutions"
+          class="solution-card"
+          [class.active]="activeSolution === solution.id"
+          (click)="selectSolution(solution.id)">
+
+          <div class="solution-card-top">
+
+            <span class="solution-number">
+              {{ solution.number }}
+            </span>
+
+            <span class="solution-icon">
+              {{ solution.icon }}
+            </span>
+
+          </div>
+
+
+          <h3>
+            {{ solution.title }}
+          </h3>
+
+
+          <span class="solution-subtitle">
+            {{ solution.subtitle }}
+          </span>
+
+
+          <p>
+            {{ solution.description }}
+          </p>
+
+
+          <div class="solution-link">
+
+            Explore Solution
+
+            <span>
+              →
+            </span>
+
+          </div>
+
+        </button>
+
+      </div>
+
+
+      <!-- ACTIVE SOLUTION -->
+
+      <div
+        class="solution-details"
+        id="solution-details"
+        *ngIf="activeSolutionData">
+
+        <div class="solution-details-left">
+
+          <div class="details-number">
+            {{ activeSolutionData.number }}
+          </div>
+
+          <div>
+
+            <span class="details-label">
+              SELECTED SOLUTION
+            </span>
+
+            <h3>
+              {{ activeSolutionData.title }}
+            </h3>
+
+            <p>
+              {{ activeSolutionData.description }}
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="details-features">
+
+          <div
+            class="feature-line"
+            *ngFor="let feature of activeSolutionData.features">
+
+            <span class="feature-check">
+              ✓
+            </span>
+
+            <span>
+              {{ feature }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="details-action">
+
+          <button
+            type="button"
+            class="dark-button"
+            (click)="openQuote(activeSolutionData.title)">
+
+            Request This Solution
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       RESIDENTIAL / COMMERCIAL
+  ============================================================ -->
+
+  <section
+    class="section applications-section"
+    id="applications">
+
+    <div class="solar-container">
+
+      <div class="section-heading split-heading">
+
+        <div>
+
+          <div class="section-eyebrow">
+            APPLICATIONS
+          </div>
+
+          <h2>
+            Solar For
+            <span>Every Requirement</span>
+          </h2>
+
+        </div>
+
+        <p>
+          Professionally planned solar installations
+          for residential, commercial and industrial
+          applications.
+        </p>
+
+      </div>
+
+
+      <div class="applications-grid">
+
+        <article
+          class="application-card"
+          *ngFor="let application of applications">
+
+          <div class="application-image"
+               [class.residential]="application.id === 'residential'"
+               [class.commercial]="application.id === 'commercial'">
+
+            <div class="application-overlay"></div>
+
+            <div class="application-icon">
+              {{ application.icon }}
+            </div>
+
+            <span>
+              {{ application.label }}
+            </span>
+
+          </div>
+
+
+          <div class="application-content">
+
+            <h3>
+              {{ application.title }}
+            </h3>
+
+            <p>
+              {{ application.description }}
+            </p>
+
+
+            <ul>
+
+              <li
+                *ngFor="let point of application.points">
+
+                <span>✓</span>
+
+                {{ point }}
+
+              </li>
+
+            </ul>
+
+
+            <button
+              type="button"
+              class="text-button"
+              (click)="selectApplication(application.id)">
+
+              Discuss Your Project
+
+              <span>→</span>
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       COMPONENTS
+  ============================================================ -->
+
+  <section
+    class="section components-section"
+    id="components">
+
+    <div class="solar-container">
+
+      <div class="section-heading centered">
+
+        <div class="section-eyebrow">
+          SOLAR COMPONENTS
+        </div>
+
+        <h2>
+          Quality Components.
+          <span>Engineered Performance.</span>
+        </h2>
+
+        <p>
+          Every solar project requires the right combination
+          of modules, inverter and mounting structure.
+        </p>
+
+      </div>
+
+
+      <div class="components-grid">
+
+        <article
+          class="component-card"
+          *ngFor="let component of components">
+
+          <div class="component-top">
+
+            <div class="component-icon">
+              {{ component.icon }}
+            </div>
+
+            <span>
+              {{ component.tag }}
+            </span>
+
+          </div>
+
+
+          <h3>
+            {{ component.title }}
+          </h3>
+
+
+          <p>
+            {{ component.description }}
+          </p>
+
+
+          <div class="component-specs">
+
+            <div
+              *ngFor="let spec of component.specs">
+
+              <span>✓</span>
+
+              {{ spec }}
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       NET METERING
+  ============================================================ -->
+
+  <section
+    class="section net-metering-section"
+    id="net-metering">
+
+    <div class="solar-container">
+
+      <div class="net-metering-wrapper">
+
+        <div class="net-metering-content">
+
+          <div class="section-eyebrow light">
+            NET METERING ASSISTANCE
+          </div>
+
+          <h2>
+            Generate.
+            <span>Consume.</span>
+            Export.
+          </h2>
+
+          <p>
+            We help customers understand the applicable
+            net-metering process and coordinate the
+            required documentation and project steps.
+          </p>
+
+
+          <button
+            type="button"
+            class="white-button"
+            (click)="openQuote('On-Grid Solar')">
+
+            Discuss Net Metering
+
+            <span>→</span>
+
+          </button>
+
+        </div>
+
+
+        <div class="net-metering-process">
+
+          <div class="metering-step">
+
+            <div class="metering-number">
+              01
+            </div>
+
+            <div>
+              <strong>
+                Solar Generation
+              </strong>
+
+              <span>
+                Your rooftop system generates electricity.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="metering-line"></div>
+
+
+          <div class="metering-step">
+
+            <div class="metering-number">
+              02
+            </div>
+
+            <div>
+              <strong>
+                Self Consumption
+              </strong>
+
+              <span>
+                Solar power is used by your property.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="metering-line"></div>
+
+
+          <div class="metering-step">
+
+            <div class="metering-number">
+              03
+            </div>
+
+            <div>
+              <strong>
+                Grid Export
+              </strong>
+
+              <span>
+                Applicable surplus generation can be exported.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="metering-line"></div>
+
+
+          <div class="metering-step">
+
+            <div class="metering-number">
+              04
+            </div>
+
+            <div>
+              <strong>
+                Metering Process
+              </strong>
+
+              <span>
+                Assistance with applicable procedures.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SUBSIDY
+  ============================================================ -->
+
+  <section
+    class="section subsidy-section"
+    id="subsidy">
+
+    <div class="solar-container">
+
+      <div class="subsidy-grid">
+
+        <div class="subsidy-visual">
+
+          <div class="subsidy-circle">
+
+            <span>
+              ☀
+            </span>
+
+            <strong>
+              SOLAR
+            </strong>
+
+            <small>
+              SUBSIDY
+              ASSISTANCE
+            </small>
+
+          </div>
+
+
+          <div class="subsidy-floating-card">
+
+            <span>
+              ✓
+            </span>
+
+            <div>
+              <strong>
+                Documentation
+              </strong>
+
+              <small>
+                Assistance
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="subsidy-content">
+
+          <div class="section-eyebrow">
+            PM SURYA GHAR
+          </div>
+
+          <h2>
+            Subsidy
+            <span>Assistance</span>
+            Made Simpler.
+          </h2>
+
+          <p>
+            We assist customers throughout the applicable
+            solar subsidy process, including documentation,
+            installation coordination and project-related
+            requirements.
+          </p>
+
+
+          <div class="subsidy-points">
+
+            <div>
+              <span>01</span>
+
+              <div>
+                <strong>
+                  Customer Registration
+                </strong>
+
+                <small>
+                  Guidance through the applicable process.
+                </small>
+              </div>
+            </div>
+
+
+            <div>
+              <span>02</span>
+
+              <div>
+                <strong>
+                  Solar Installation
+                </strong>
+
+                <small>
+                  Professional system installation and commissioning.
+                </small>
+              </div>
+            </div>
+
+
+            <div>
+              <span>03</span>
+
+              <div>
+                <strong>
+                  Documentation Support
+                </strong>
+
+                <small>
+                  Assistance with required project documents.
+                </small>
+              </div>
+            </div>
+
+
+            <div>
+              <span>04</span>
+
+              <div>
+                <strong>
+                  Subsidy Process Assistance
+                </strong>
+
+                <small>
+                  Support through the applicable process.
+                </small>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="scheme-note">
+
+            <span>ⓘ</span>
+
+            <p>
+              Subsidy eligibility, amount and government
+              procedures are subject to the applicable
+              scheme guidelines and official approvals.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       EPC PROCESS
+  ============================================================ -->
+
+  <section
+    class="section epc-section"
+    id="epc-process">
+
+    <div class="solar-container">
+
+      <div class="section-heading centered">
+
+        <div class="section-eyebrow">
+          COMPLETE EPC PROCESS
+        </div>
+
+        <h2>
+          From Enquiry To
+          <span>Solar Commissioning</span>
+        </h2>
+
+        <p>
+          One structured workflow for your complete
+          solar installation project.
+        </p>
+
+      </div>
+
+
+      <div class="epc-timeline">
+
+        <div
+          class="epc-step"
+          *ngFor="let step of epcSteps">
+
+          <div class="epc-number">
+            {{ step.number }}
+          </div>
+
+          <div class="epc-step-content">
+
+            <h3>
+              {{ step.title }}
+            </h3>
+
+            <p>
+              {{ step.text }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       WHY CHOOSE
+  ============================================================ -->
+
+  <section
+    class="section why-section"
+    id="why-us">
+
+    <div class="solar-container">
+
+      <div class="why-layout">
+
+        <div class="why-intro">
+
+          <div class="section-eyebrow">
+            WHY A-NIK & CO.
+          </div>
+
+          <h2>
+            More Than
+            <span>Solar Installation.</span>
+          </h2>
+
+          <p>
+            We combine engineering, electrical and solar
+            expertise to provide a structured EPC experience
+            from planning to commissioning.
+          </p>
+
+
+          <button
+            type="button"
+            class="dark-button"
+            (click)="openQuote()">
+
+            Start Your Solar Project
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="reasons-grid">
+
+          <article
+            class="reason-card"
+            *ngFor="let reason of reasons">
+
+            <div class="reason-icon">
+              {{ reason.icon }}
+            </div>
+
+            <h3>
+              {{ reason.title }}
+            </h3>
+
+            <p>
+              {{ reason.text }}
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FINAL CTA
+  ============================================================ -->
+
+  <section
+    class="solar-cta"
+    id="quote">
+
+    <div class="cta-background"></div>
+
+    <div class="solar-container">
+
+      <div class="cta-content">
+
+        <div>
+
+          <div class="section-eyebrow light">
+            START YOUR SOLAR JOURNEY
+          </div>
+
+          <h2>
+            Ready To Switch
+            <span>To Solar?</span>
+          </h2>
+
+          <p>
+            Tell us about your requirement and our team
+            will help you plan the right solar solution.
+          </p>
+
+        </div>
+
+
+        <div class="cta-actions">
+
+          <button
+            type="button"
+            class="cta-white-button"
+            (click)="openQuote()">
+
+            Get A Solar Quote
+
+            <span>→</span>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="cta-whatsapp-button"
+            (click)="openWhatsApp()">
+
+            <span class="whatsapp-symbol">
+              ☎
+            </span>
+
+            WhatsApp Us
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FLOATING WHATSAPP
+  ============================================================ -->
+
+  <button
+    type="button"
+    class="floating-whatsapp"
+    aria-label="Contact A-NIK & CO. on WhatsApp"
+    (click)="openWhatsApp()">
+
+    <span>
+      ☎
+    </span>
+
+    <div>
+      <strong>
+        WhatsApp
+      </strong>
+
+      <small>
+        Solar Enquiry
+      </small>
+    </div>
+
+  </button>
+
+
+  <!-- ============================================================
+       QUOTE MODAL
+  ============================================================ -->
+
+  <div
+    class="quote-modal-backdrop"
+    *ngIf="quoteModalOpen"
+    (click)="closeQuote()">
+
+    <div
+      class="quote-modal"
+      (click)="$event.stopPropagation()">
+
+
+      <!-- MODAL HEADER -->
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="modal-eyebrow">
+            SOLAR CONSULTATION
+          </span>
+
+          <h2>
+            Get Your Solar Quote
+          </h2>
+
+          <p>
+            Tell us about your project.
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="modal-close"
+          aria-label="Close"
+          (click)="closeQuote()">
+
+          ×
+
+        </button>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <form
+        [formGroup]="quoteForm"
+        (ngSubmit)="submitQuote()"
+        class="quote-form">
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+          <label>
+            Full Name
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Enter your full name"
+            [class.invalid]="isInvalid('name')"
+          />
+
+          <small
+            *ngIf="isInvalid('name')">
+
+            Please enter your name.
+
+          </small>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+          <label>
+            Mobile Number
+            <span>*</span>
+          </label>
+
+          <input
+            type="tel"
+            formControlName="phone"
+            maxlength="10"
+            placeholder="Enter 10-digit mobile number"
+            [class.invalid]="isInvalid('phone')"
+          />
+
+          <small
+            *ngIf="isInvalid('phone')">
+
+            Please enter a valid 10-digit mobile number.
+
+          </small>
+
+        </div>
+
+
+        <!-- CITY -->
+
+        <div class="form-group">
+
+          <label>
+            City / Location
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            formControlName="city"
+            placeholder="Example: Kolkata"
+            [class.invalid]="isInvalid('city')"
+          />
+
+          <small
+            *ngIf="isInvalid('city')">
+
+            Please enter your location.
+
+          </small>
+
+        </div>
+
+
+        <!-- SYSTEM -->
+
+        <div class="form-group">
+
+          <label>
+            Solar Requirement
+            <span>*</span>
+          </label>
+
+          <select
+            formControlName="systemType">
+
+            <option value="On-Grid Solar">
+              On-Grid Solar
+            </option>
+
+            <option value="Off-Grid Solar">
+              Off-Grid Solar
+            </option>
+
+            <option value="Hybrid Solar">
+              Hybrid Solar
+            </option>
+
+            <option value="Residential Rooftop Solar">
+              Residential Rooftop Solar
+            </option>
+
+            <option value="Commercial & Industrial Solar">
+              Commercial & Industrial Solar
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- BILL -->
+
+        <div class="form-group">
+
+          <label>
+            Approx. Monthly Electricity Bill
+          </label>
+
+          <div class="input-with-prefix">
+
+            <span>
+              ₹
+            </span>
+
+            <input
+              type="number"
+              formControlName="monthlyBill"
+              placeholder="Example: 5000"
+            />
+
+          </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="form-group full">
+
+          <label>
+            Your Requirement
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="message"
+            placeholder="Tell us about your rooftop, business, electricity requirement or any specific requirement..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-quote-button">
+
+          <span>
+            Send Enquiry On WhatsApp
+          </span>
+
+          <span>
+            →
+          </span>
+
+        </button>
+
+
+        <div class="form-security">
+
+          <span>✓</span>
+
+          Your enquiry will open directly in WhatsApp
+          with the details you provided.
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       MOBILE BOTTOM BAR
+  ============================================================ -->
+
+  <div class="mobile-action-bar">
+
+    <button
+      type="button"
+      (click)="openWhatsApp()">
+
+      ☎
+
+      <span>
+        WhatsApp
+      </span>
+
+    </button>
+
+
+    <button
+      type="button"
+      (click)="openQuote()">
+
+      ☀
+
+      <span>
+        Get Quote
+      </span>
+
+    </button>
+
+  </div>
+
+</div>

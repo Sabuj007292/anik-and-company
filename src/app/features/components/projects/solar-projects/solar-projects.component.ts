@@ -91,7 +91,7 @@ projects: SolarProject[] = [
     capacity: '3 kW',
     category: 'Residential',
     scheme: 'PM Surya Ghar',
-    clientName: 'Client Name 01',
+    clientName: 'Nishith Biswas',
     location: 'Kolkata, West Bengal',
     title: '3 kW Rooftop Solar Installation',
     description:

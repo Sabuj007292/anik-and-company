@@ -74,6 +74,13 @@ export const routes: Routes = [
             (m) => m.SolarProjectsComponent,
           ),
       },
+      {
+        path:'projects/solar-solutions',
+        loadComponent: () =>
+          import('./features/components/projects/solar-solutions/solar-solutions.component').then(
+            (m) => m.SolarSolutionsComponent,
+          ),
+      }
     ],
   },
 ];
