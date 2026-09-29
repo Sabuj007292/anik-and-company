@@ -90,7 +90,7 @@ export class HeaderComponent {
   // WHATSAPP
   // =====================================================
 
-  readonly whatsappNumber = '919830316065';
+  readonly whatsappNumber = '918240919580';
 
   readonly whatsappMessage =
     'Hello A-NIK & CO., I am interested in your solar installation services. Please share more details.';
