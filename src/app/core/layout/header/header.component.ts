@@ -110,7 +110,7 @@ export class HeaderComponent {
     {
       icon: 'whatsapp',
       label: 'WhatsApp',
-      value: '+91 9830316065',
+      value: '+91 8240919580',
       href: this.whatsappLink
     },
 
