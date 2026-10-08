@@ -3,8 +3,7 @@
   class="contact-section"
 >
 
-  <div class="contact-container container">
-
+  <div class="contact-container">
 
     <!-- =====================================================
          SECTION HEADER
@@ -22,14 +21,19 @@
 
 
       <h2>
+
         Let's Plan Your
+
         <strong>Project</strong>
+
       </h2>
 
 
       <p>
+
         Tell us what you need. Our team will review your
         requirement and get in touch with you.
+
       </p>
 
     </div>
@@ -50,7 +54,10 @@
       <aside class="contact-info">
 
 
+        <!-- LEFT HEADER -->
+
         <div class="info-top">
+
 
           <div class="info-icon">
 
@@ -64,27 +71,37 @@
 
 
           <span class="info-label">
+
             GET IN TOUCH
+
           </span>
 
 
           <h3>
-            Let's discuss<br>
+
+            Let's discuss
+            <br>
+
             your requirement.
+
           </h3>
 
 
           <p>
+
             Whether you need solar, electrical, civil
             engineering, IT or consultancy services,
             share your requirement with our team.
+
           </p>
 
         </div>
 
 
 
-        <!-- CONTACT DETAILS -->
+        <!-- =================================================
+             CONTACT DETAILS
+             ================================================= -->
 
         <div class="contact-details">
 
@@ -101,7 +118,7 @@
 
               <app-icon
                 name="phone"
-                [size]="17"
+                [size]="18"
                 [strokeWidth]="1.8">
               </app-icon>
 
@@ -120,6 +137,14 @@
 
             </span>
 
+
+            <app-icon
+              class="detail-arrow"
+              name="arrowUpRight"
+              [size]="15"
+              [strokeWidth]="1.8">
+            </app-icon>
+
           </button>
 
 
@@ -136,7 +161,7 @@
 
               <app-icon
                 name="mail"
-                [size]="17"
+                [size]="18"
                 [strokeWidth]="1.8">
               </app-icon>
 
@@ -155,6 +180,14 @@
 
             </span>
 
+
+            <app-icon
+              class="detail-arrow"
+              name="arrowUpRight"
+              [size]="15"
+              [strokeWidth]="1.8">
+            </app-icon>
+
           </button>
 
 
@@ -171,7 +204,7 @@
 
               <app-icon
                 name="mapPin"
-                [size]="17"
+                [size]="18"
                 [strokeWidth]="1.8">
               </app-icon>
 
@@ -190,13 +223,24 @@
 
             </span>
 
+
+            <app-icon
+              class="detail-arrow"
+              name="arrowUpRight"
+              [size]="15"
+              [strokeWidth]="1.8">
+            </app-icon>
+
           </button>
+
 
         </div>
 
 
 
-        <!-- WHATSAPP -->
+        <!-- =================================================
+             WHATSAPP
+             ================================================= -->
 
         <button
           type="button"
@@ -204,11 +248,11 @@
           (click)="openWhatsApp()"
         >
 
-          <span>
+          <span class="whatsapp-icon">
 
             <app-icon
               name="whatsapp"
-              [size]="18"
+              [size]="19"
               [strokeWidth]="1.8">
             </app-icon>
 
@@ -229,12 +273,14 @@
 
 
           <app-icon
+            class="whatsapp-arrow"
             name="arrowUpRight"
             [size]="17"
             [strokeWidth]="2">
           </app-icon>
 
         </button>
+
 
       </aside>
 
@@ -277,7 +323,63 @@
 
 
 
-        <!-- FORM -->
+        <!-- =================================================
+             SUCCESS MESSAGE
+             ================================================= -->
+
+        @if (successMessage) {
+
+          <div
+            class="form-alert success-alert"
+            role="alert"
+          >
+
+            <app-icon
+              name="checkCircle"
+              [size]="18"
+              [strokeWidth]="2">
+            </app-icon>
+
+            <span>
+              {{ successMessage }}
+            </span>
+
+          </div>
+
+        }
+
+
+
+        <!-- =================================================
+             ERROR MESSAGE
+             ================================================= -->
+
+        @if (errorMessage) {
+
+          <div
+            class="form-alert error-alert"
+            role="alert"
+          >
+
+            <app-icon
+              name="close"
+              [size]="18"
+              [strokeWidth]="2">
+            </app-icon>
+
+            <span>
+              {{ errorMessage }}
+            </span>
+
+          </div>
+
+        }
+
+
+
+        <!-- =================================================
+             FORM
+             ================================================= -->
 
         <form
           [formGroup]="contactForm"
@@ -286,9 +388,9 @@
         >
 
 
-          <!-- ===============================================
+          <!-- =================================================
                ROW 1
-               =============================================== -->
+               ================================================= -->
 
           <div class="form-grid">
 
@@ -298,8 +400,11 @@
             <div class="form-field">
 
               <label for="fullName">
+
                 Full Name
+
                 <span>*</span>
+
               </label>
 
 
@@ -340,6 +445,18 @@
 
               }
 
+
+              @if (
+                submitted &&
+                f['fullName'].hasError('minlength')
+              ) {
+
+                <small class="error-message">
+                  Please enter at least 2 characters.
+                </small>
+
+              }
+
             </div>
 
 
@@ -349,8 +466,11 @@
             <div class="form-field">
 
               <label for="mobile">
+
                 WhatsApp / Mobile
+
                 <span>*</span>
+
               </label>
 
 
@@ -409,9 +529,9 @@
 
 
 
-          <!-- ===============================================
+          <!-- =================================================
                ROW 2
-               =============================================== -->
+               ================================================= -->
 
           <div class="form-grid">
 
@@ -421,7 +541,9 @@
             <div class="form-field">
 
               <label for="email">
+
                 Email Address
+
               </label>
 
 
@@ -471,8 +593,11 @@
             <div class="form-field">
 
               <label for="location">
+
                 Project Location
+
                 <span>*</span>
+
               </label>
 
 
@@ -518,92 +643,171 @@
 
 
 
-          <!-- ===============================================
+          <!-- =================================================
                SERVICE
-               =============================================== -->
+               ================================================= -->
 
-          <div class="form-field service-field">
+         <!-- SERVICE REQUIRED -->
+<div class="form-field service-field">
 
-            <label for="service">
-              Service Required
-              <span>*</span>
-            </label>
+  <label for="service">
+
+    Service Required
+
+    <span>*</span>
+
+  </label>
 
 
-            <div
-              class="select-wrapper"
-              [class.error]="
-                submitted &&
-                f['service'].invalid
-              "
-            >
+  <div
+    class="custom-select"
+    [class.open]="serviceDropdownOpen"
+    [class.error]="submitted && f['service'].invalid"
+  >
+
+    <!-- Selected value -->
+    <button
+      type="button"
+      class="custom-select-trigger"
+      (click)="toggleServiceDropdown()"
+      [attr.aria-expanded]="serviceDropdownOpen"
+    >
+
+      <span class="select-left">
+
+        <app-icon
+          name="briefcase"
+          [size]="17"
+          [strokeWidth]="1.8">
+        </app-icon>
+
+
+        <span
+          class="selected-text"
+          [class.placeholder]="!f['service'].value"
+        >
+          {{
+            f['service'].value ||
+            'Select the service you need'
+          }}
+        </span>
+
+      </span>
+
+
+      <app-icon
+        name="chevronDown"
+        [size]="18"
+        [strokeWidth]="2"
+        class="select-chevron">
+      </app-icon>
+
+    </button>
+
+
+    <!-- Dropdown -->
+    @if (serviceDropdownOpen) {
+
+      <div class="custom-select-menu">
+
+        <div class="dropdown-header">
+
+          <span>
+            SELECT SERVICE
+          </span>
+
+          <small>
+            Choose one option
+          </small>
+
+        </div>
+
+
+        @for (
+          service of services;
+          track service
+        ) {
+
+          <button
+            type="button"
+            class="service-option"
+            [class.selected]="
+              f['service'].value === service
+            "
+            (click)="selectService(service)"
+          >
+
+            <span class="option-icon">
 
               <app-icon
                 name="briefcase"
-                [size]="17"
+                [size]="15"
                 [strokeWidth]="1.8">
               </app-icon>
 
-
-              <select
-                id="service"
-                formControlName="service"
-              >
-
-                <option
-                  value=""
-                  disabled
-                >
-                  Select the service you need
-                </option>
-
-                @for (
-                  service of services;
-                  track service
-                ) {
-
-                  <option [value]="service">
-                    {{ service }}
-                  </option>
-
-                }
-
-              </select>
+            </span>
 
 
-              <app-icon
-                name="chevronDown"
-                [size]="16"
-                [strokeWidth]="2">
-              </app-icon>
+            <span class="option-text">
 
-            </div>
+              {{ service }}
+
+            </span>
 
 
             @if (
-              submitted &&
-              f['service'].hasError('required')
+              f['service'].value === service
             ) {
 
-              <small class="error-message">
-                Please select a service.
-              </small>
+              <app-icon
+                name="check"
+                [size]="16"
+                [strokeWidth]="2.2"
+                class="option-check">
+              </app-icon>
 
             }
 
-          </div>
+          </button>
+
+        }
+
+      </div>
+
+    }
+
+  </div>
+
+
+  @if (
+    submitted &&
+    f['service'].hasError('required')
+  ) {
+
+    <small class="error-message">
+
+      Please select a service.
+
+    </small>
+
+  }
+
+</div>
 
 
 
-          <!-- ===============================================
+          <!-- =================================================
                MESSAGE
-               =============================================== -->
+               ================================================= -->
 
           <div class="form-field message-field">
 
             <label for="message">
+
               Project Requirement
+
               <span>*</span>
+
             </label>
 
 
@@ -659,9 +863,9 @@
 
 
 
-          <!-- ===============================================
+          <!-- =================================================
                FORM FOOTER
-               =============================================== -->
+               ================================================= -->
 
           <div class="form-footer">
 
@@ -678,13 +882,13 @@
 
               </span>
 
+
               <p>
                 Your information is used only to
                 respond to your enquiry.
               </p>
 
             </div>
-
 
 
             <button
@@ -722,6 +926,7 @@
 
           </div>
 
+
         </form>
 
       </div>
@@ -737,6 +942,8 @@
     <div class="contact-bottom-strip">
 
 
+      <!-- WORKING HOURS -->
+
       <div class="bottom-item">
 
         <span class="bottom-icon">
@@ -748,6 +955,7 @@
           </app-icon>
 
         </span>
+
 
         <div>
 
@@ -764,10 +972,10 @@
       </div>
 
 
-
       <div class="bottom-divider"></div>
 
 
+      <!-- EMAIL -->
 
       <div class="bottom-item">
 
@@ -780,6 +988,7 @@
           </app-icon>
 
         </span>
+
 
         <div>
 
@@ -796,10 +1005,10 @@
       </div>
 
 
-
       <div class="bottom-divider"></div>
 
 
+      <!-- PHONE -->
 
       <div class="bottom-item">
 
@@ -812,6 +1021,7 @@
           </app-icon>
 
         </span>
+
 
         <div>
 
@@ -828,13 +1038,15 @@
       </div>
 
 
-
       <div class="bottom-divider"></div>
 
 
+      <!-- LOCATION -->
 
-      <div class="bottom-item clickable"
-           (click)="openMap()">
+      <div
+        class="bottom-item clickable"
+        (click)="openMap()"
+      >
 
         <span class="bottom-icon">
 
@@ -845,6 +1057,7 @@
           </app-icon>
 
         </span>
+
 
         <div>
 
@@ -859,6 +1072,7 @@
         </div>
 
       </div>
+
 
     </div>
 

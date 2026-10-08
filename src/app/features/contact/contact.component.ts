@@ -55,6 +55,7 @@ export class ContactComponent {
   successMessage = '';
 
   errorMessage = '';
+  serviceDropdownOpen = false;
 
 
   // =====================================================
@@ -310,6 +311,28 @@ export class ContactComponent {
 
   }
 
+
+  toggleServiceDropdown(): void {
+
+  this.serviceDropdownOpen =
+    !this.serviceDropdownOpen;
+
+}
+
+
+selectService(service: string): void {
+
+  this.contactForm
+    .get('service')
+    ?.setValue(service);
+
+  this.contactForm
+    .get('service')
+    ?.markAsTouched();
+
+  this.serviceDropdownOpen = false;
+
+}
 
   // =====================================================
   // WHATSAPP
